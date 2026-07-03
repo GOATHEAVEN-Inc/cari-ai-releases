@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>카리AI — 어떤 물음에도 답하는 AI, 그리고 내 기기까지</title>
+    <meta name="description" content="카리AI는 범용 AI 어시스턴트이자 생활 기기 조작 엔진입니다. Windows·Mac 설치, 웹에서 바로 사용." />
+    <style>
+      :root {
+        --bg: #0d1414;
+        --panel: #12201f;
+        --text: #eaf3f1;
+        --muted: #93a7a3;
+        --brand: #17b3a4;
+        --brand-2: #7c5cff;
+        --line: #223432;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+        background: radial-gradient(1200px 600px at 50% -10%, #16302c 0%, var(--bg) 55%);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+      header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 20px 0;
+      }
+      .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 19px; }
+      .brand .mark {
+        width: 34px; height: 34px; border-radius: 9px;
+        background: linear-gradient(135deg, var(--brand), #0e8f83);
+        display: grid; place-items: center; color: #041413; font-weight: 900;
+      }
+      nav a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: 14px; }
+      nav a:hover { color: var(--text); }
+
+      .hero { text-align: center; padding: 66px 0 40px; }
+      .badge {
+        display: inline-block; padding: 6px 13px; border: 1px solid var(--line);
+        border-radius: 999px; color: var(--brand); font-size: 12.5px; font-weight: 700;
+        background: #0f1d1c; margin-bottom: 22px;
+      }
+      .hero h1 { font-size: 52px; line-height: 1.12; letter-spacing: -1.2px; font-weight: 850; }
+      .hero h1 .grad {
+        background: linear-gradient(100deg, var(--brand), var(--brand-2));
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .hero p.sub { color: var(--muted); font-size: 18px; max-width: 620px; margin: 20px auto 0; }
+
+      .downloads { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 34px 0 12px; }
+      .btn {
+        display: inline-flex; align-items: center; gap: 10px;
+        padding: 15px 26px; border-radius: 12px; font-size: 15.5px; font-weight: 700;
+        text-decoration: none; border: 1px solid transparent; cursor: pointer;
+      }
+      .btn.primary { background: linear-gradient(135deg, var(--brand), #0e8f83); color: #041413; }
+      .btn.primary:hover { filter: brightness(1.07); }
+      .btn.ghost { background: #0f1d1c; color: var(--text); border-color: var(--line); }
+      .btn.ghost:hover { border-color: var(--brand); }
+      .btn .os { font-size: 20px; }
+      .btn small { display: block; font-size: 11.5px; font-weight: 600; opacity: 0.7; }
+      .alt-os { color: var(--muted); font-size: 13px; margin-top: 6px; }
+      .alt-os a { color: var(--brand); text-decoration: none; }
+      .alt-os a:hover { text-decoration: underline; }
+
+      section { padding: 46px 0; border-top: 1px solid var(--line); }
+      section h2 { font-size: 27px; letter-spacing: -0.6px; margin-bottom: 6px; text-align: center; }
+      section .lead { color: var(--muted); text-align: center; margin-bottom: 30px; }
+
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+      .card .ico { font-size: 24px; margin-bottom: 10px; }
+      .card h3 { font-size: 16.5px; margin-bottom: 6px; }
+      .card p { color: var(--muted); font-size: 14px; }
+
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: s; }
+      .step { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; position: relative; }
+      .step::before {
+        counter-increment: s; content: counter(s);
+        position: absolute; top: -14px; left: 18px;
+        width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center;
+        background: var(--brand); color: #041413; font-weight: 900;
+      }
+      .step h3 { font-size: 15.5px; margin: 8px 0 5px; }
+      .step p { color: var(--muted); font-size: 13.5px; }
+
+      .cta { text-align: center; }
+      .cmp { max-width: 640px; margin: 22px auto 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+      .cmp .row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; }
+      .cmp .row > div { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 14px; }
+      .cmp .row:first-child > div { border-top: none; font-weight: 700; background: #0f1d1c; }
+      .cmp .yes { color: var(--brand); font-weight: 700; }
+      .cmp .no { color: #6c807c; }
+
+      footer { border-top: 1px solid var(--line); padding: 30px 0 50px; color: var(--muted); font-size: 13px; text-align: center; }
+
+      @media (max-width: 760px) {
+        .hero h1 { font-size: 36px; }
+        .grid, .steps, .cmp .row { grid-template-columns: 1fr; }
+        nav { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand"><span class="mark">카</span> 카리AI</div>
+        <nav>
+          <a href="#features">기능</a>
+          <a href="#install">설치</a>
+          <a href="#download">다운로드</a>
+        </nav>
+      </header>
+
+      <div class="hero" id="download">
+        <span class="badge">범용 AI 어시스턴트 · 생활 기기 조작 엔진</span>
+        <h1>어떤 물음에도 답하고,<br /><span class="grad">내 기기까지 움직입니다</span></h1>
+        <p class="sub">
+          날씨부터 코드 작성, 여행 계획까지 대화로 답하고 — TV·조명·PC·POS 같은 생활 기기도
+          자연어로 조작합니다. 기억하고, 이어서 대화하고, 안전하게.
+        </p>
+
+        <div class="downloads">
+          <a class="btn primary" id="primaryDownload" href="#">
+            <span class="os" id="primaryIcon">🖥️</span>
+            <span>
+              <span id="primaryLabel">다운로드</span>
+              <small id="primaryHint">설치 후 더블클릭으로 실행</small>
+            </span>
+          </a>
+          <a class="btn ghost" id="webConsole" href="#">
+            <span class="os">🌐</span>
+            <span>웹에서 바로 사용<small>설치 없이 브라우저에서</small></span>
+          </a>
+        </div>
+        <p class="alt-os" id="altOs"></p>
+      </div>
+
+      <section id="features">
+        <h2>무엇이 다른가</h2>
+        <p class="lead">오픈클로·헤르메스AI와 달리, 설치도 사용도 가장 쉽게.</p>
+        <div class="grid">
+          <div class="card"><div class="ico">💬</div><h3>범용 Q&amp;A</h3><p>지식 질문부터 코드·글쓰기까지 대화로 바로 답합니다.</p></div>
+          <div class="card"><div class="ico">🧠</div><h3>기억하는 AI</h3><p>“…기억해줘” 한마디면 저장하고, 다음 대화에서 알아서 떠올립니다.</p></div>
+          <div class="card"><div class="ico">🔌</div><h3>기기 조작</h3><p>TV·에어컨·조명·PC·POS를 자연어 한 문장으로 제어합니다.</p></div>
+          <div class="card"><div class="ico">⚡</div><h3>실시간 스트리밍</h3><p>답변이 생성되는 대로 즉시 흘러나옵니다.</p></div>
+          <div class="card"><div class="ico">🔒</div><h3>안전·보안 우선</h3><p>결제·비밀번호 등 위험 작업은 자동 차단, 최고 수준 보안 하드닝.</p></div>
+          <div class="card"><div class="ico">🖥️</div><h3>어디서든</h3><p>Windows·Mac 설치 앱과 웹, 어디서나 같은 경험.</p></div>
+        </div>
+      </section>
+
+      <section id="install">
+        <h2>3단계면 끝</h2>
+        <p class="lead">터미널 없이, 일반 앱처럼 설치합니다.</p>
+        <div class="steps">
+          <div class="step"><h3>내려받기</h3><p>내 OS에 맞는 설치 파일(.dmg / .exe)을 받습니다.</p></div>
+          <div class="step"><h3>설치</h3><p>Mac은 드래그, Windows는 설치 관리자로 다음·다음.</p></div>
+          <div class="step"><h3>실행</h3><p>앱을 열고 바로 대화를 시작합니다.</p></div>
+        </div>
+
+        <div class="cmp">
+          <div class="row"><div>설치 방식</div><div>카리AI</div><div>CLI형 도구</div></div>
+          <div class="row"><div>터미널 필요</div><div class="no">아니오</div><div class="yes">예</div></div>
+          <div class="row"><div>더블클릭 설치</div><div class="yes">예 (.dmg/.exe)</div><div class="no">—</div></div>
+          <div class="row"><div>설치 없이 웹 사용</div><div class="yes">가능</div><div class="no">—</div></div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>지금 시작하세요</h2>
+        <p class="lead">설치 1분, 대화는 바로.</p>
+        <div class="downloads">
+          <a class="btn primary" id="primaryDownload2" href="#"><span class="os" id="primaryIcon2">🖥️</span><span id="primaryLabel2">다운로드</span></a>
+        </div>
+        <p class="alt-os" id="altOs2"></p>
+      </section>
+    </div>
+
+    <footer>
+      <div class="wrap">© <span id="year"></span> 카리AI · 범용 AI 어시스턴트 · <a href="#" style="color:var(--muted)">문의</a></div>
+    </footer>
+
+    <script>
+      // ── 배포 설정: 실제 릴리스 위치로 교체하세요 ──────────────────────────
+      // GitHub Releases 예시: https://github.com/<owner>/<repo>/releases/latest/download/
+      var RELEASES_BASE = "https://github.com/GOATHEAVEN-Inc/cari-ai-releases/releases/latest/download/";
+      var WEB_CONSOLE_URL = "https://console.cari.ai/"; // 배포된 웹 콘솔 주소
+      var FILES = {
+        mac: "CariAI.dmg",
+        win: "CariAI.exe",
+        linux: "CariAI.AppImage"
+      };
+      // ──────────────────────────────────────────────────────────────────
+
+      var OS = { name: "기타", key: "mac", icon: "🖥️" };
+      var ua = navigator.userAgent;
+      var plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+      if (/Win/i.test(plat) || /Windows/i.test(ua)) OS = { name: "Windows", key: "win", icon: "🪟" };
+      else if (/Mac/i.test(plat) || /Mac OS X/i.test(ua)) OS = { name: "macOS", key: "mac", icon: "🍎" };
+      else if (/Linux/i.test(plat) && !/Android/i.test(ua)) OS = { name: "Linux", key: "linux", icon: "🐧" };
+
+      var dlUrl = RELEASES_BASE + FILES[OS.key];
+      function setPrimary(btn, icon, label, hint) {
+        var b = document.getElementById(btn); if (!b) return;
+        b.href = dlUrl;
+        var i = document.getElementById(icon); if (i) i.textContent = OS.icon;
+        var l = document.getElementById(label); if (l) l.textContent = OS.name + " 다운로드";
+        if (hint) { var h = document.getElementById(hint); if (h) h.textContent = OS.name + "용 설치 파일"; }
+      }
+      setPrimary("primaryDownload", "primaryIcon", "primaryLabel", "primaryHint");
+      setPrimary("primaryDownload2", "primaryIcon2", "primaryLabel2");
+
+      var web = document.getElementById("webConsole");
+      if (web) web.href = WEB_CONSOLE_URL;
+
+      // 다른 OS 링크
+      var others = [
+        { key: "mac", label: "macOS(.dmg)" },
+        { key: "win", label: "Windows(.exe)" },
+        { key: "linux", label: "Linux(.AppImage)" }
+      ].filter(function (o) { return o.key !== OS.key; });
+      var altHtml = "다른 플랫폼: " + others.map(function (o) {
+        return '<a href="' + RELEASES_BASE + FILES[o.key] + '">' + o.label + "</a>";
+      }).join(" · ");
+      ["altOs", "altOs2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.innerHTML = altHtml; });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
