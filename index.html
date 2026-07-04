@@ -99,9 +99,51 @@
 
       footer { border-top: 1px solid var(--line); padding: 30px 0 50px; color: var(--muted); font-size: 13px; text-align: center; }
 
+      /* 코드 블록 + 복사 버튼 */
+      .code {
+        display: flex; align-items: center; gap: 10px;
+        background: #0a1615; border: 1px solid var(--line); border-radius: 10px;
+        padding: 12px 12px 12px 16px; overflow-x: auto;
+      }
+      .code code {
+        color: #cdeee8; font-size: 13.5px; white-space: nowrap;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+      .code code::before { content: "$ "; color: var(--brand); }
+      .code .copy {
+        margin-left: auto; flex: 0 0 auto; padding: 5px 12px; border-radius: 7px;
+        border: 1px solid var(--line); background: #12201f; color: var(--muted);
+        font-size: 12px; font-weight: 700; cursor: pointer;
+      }
+      .code .copy:hover { color: var(--text); border-color: var(--brand); }
+      .code .copy.done { color: var(--brand); border-color: var(--brand); }
+
+      .hero-term { max-width: 720px; margin: 26px auto 0; text-align: left; }
+      .hero-term-label { display: block; color: var(--muted); font-size: 12.5px; margin-bottom: 7px; text-align: center; }
+
+      .term-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+      .term-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+      .term-os { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+      .term-card .code code { white-space: normal; word-break: break-all; }
+
+      .term-demo { max-width: 720px; margin: 0 auto; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #0a1615; }
+      .term-bar { display: flex; gap: 7px; padding: 12px 14px; background: #10201e; border-bottom: 1px solid var(--line); }
+      .term-bar i { width: 11px; height: 11px; border-radius: 50%; background: #2b4340; }
+      .term-demo pre {
+        margin: 0; padding: 16px 18px; font-size: 13px; line-height: 1.7; overflow-x: auto;
+        font-family: "SFMono-Regular", Consolas, monospace; color: #cdeee8;
+      }
+      .term-demo .p { color: var(--brand); }
+      .term-demo .u { color: var(--accent); font-weight: 700; }
+      .term-demo .b { color: var(--brand); font-weight: 700; }
+      .term-demo .d { color: #6c807c; }
+      .term-note { text-align: center; color: var(--muted); font-size: 13.5px; margin-top: 18px; }
+      .term-note code { background: #10201e; padding: 2px 7px; border-radius: 6px; color: #cdeee8; }
+      .term-note a { color: var(--brand); text-decoration: none; }
+
       @media (max-width: 760px) {
         .hero h1 { font-size: 36px; }
-        .grid, .steps, .cmp .row { grid-template-columns: 1fr; }
+        .grid, .steps, .cmp .row, .term-grid { grid-template-columns: 1fr; }
         nav { display: none; }
       }
     </style>
@@ -112,6 +154,7 @@
         <div class="brand"><span class="mark">카</span> 카리AI</div>
         <nav>
           <a href="#features">기능</a>
+          <a href="#terminal">터미널</a>
           <a href="#install">설치</a>
           <a href="#download">다운로드</a>
         </nav>
@@ -139,6 +182,14 @@
           </a>
         </div>
         <p class="alt-os" id="altOs"></p>
+
+        <div class="hero-term">
+          <span class="hero-term-label">또는 터미널에서 바로</span>
+          <div class="code" data-copy>
+            <code id="heroCmd">curl -fsSL https://goatheaven-inc.github.io/cari-ai-releases/install.sh | sh</code>
+            <button class="copy" aria-label="복사">복사</button>
+          </div>
+        </div>
       </div>
 
       <section id="features">
@@ -152,6 +203,42 @@
           <div class="card"><div class="ico">🔒</div><h3>안전·보안 우선</h3><p>결제·비밀번호 등 위험 작업은 자동 차단, 최고 수준 보안 하드닝.</p></div>
           <div class="card"><div class="ico">🖥️</div><h3>어디서든</h3><p>Windows·Mac 설치 앱과 웹, 어디서나 같은 경험.</p></div>
         </div>
+      </section>
+
+      <section id="terminal">
+        <h2>터미널에서 바로</h2>
+        <p class="lead">오픈클로·헤르메스처럼, 한 줄 명령으로 설치하고 대화하세요. (Node.js 18+ 필요)</p>
+        <div class="term-grid">
+          <div class="term-card">
+            <div class="term-os">🍎 🐧 macOS / Linux</div>
+            <div class="code" data-copy>
+              <code>curl -fsSL https://goatheaven-inc.github.io/cari-ai-releases/install.sh | sh</code>
+              <button class="copy" aria-label="복사">복사</button>
+            </div>
+          </div>
+          <div class="term-card">
+            <div class="term-os">🪟 Windows (PowerShell)</div>
+            <div class="code" data-copy>
+              <code>irm https://goatheaven-inc.github.io/cari-ai-releases/install.ps1 | iex</code>
+              <button class="copy" aria-label="복사">복사</button>
+            </div>
+          </div>
+        </div>
+        <div class="term-demo">
+          <div class="term-bar"><i></i><i></i><i></i></div>
+          <pre><span class="p">$</span> cari
+<span class="d">  카리AI  터미널 어시스턴트</span>
+<span class="u">나 ›</span> 제주도 2박3일 일정 짜줘
+<span class="b">카리 ›</span> 좋아요! 1일차는 성산일출봉과 섭지코지…
+<span class="u">나 ›</span> 거실 불 꺼줘
+<span class="b">카리 ›</span> 거실 조명을 끄는 실행 계획을 준비했어요.
+<span class="d">  🧠 기억 참조: 여행 일정</span></pre>
+        </div>
+        <p class="term-note">
+          설치 후 <code>cari</code> 로 대화, <code>cari "질문"</code> 로 한 줄 질문,
+          <code>cari remember "..."</code> 로 기억. 자세히는
+          <a href="https://github.com/GOATHEAVEN-Inc/cari-ai-releases#readme">문서</a>.
+        </p>
       </section>
 
       <section id="install">
@@ -230,6 +317,22 @@
       ["altOs", "altOs2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.innerHTML = altHtml; });
 
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // 코드 블록 복사 버튼
+      document.querySelectorAll(".code[data-copy]").forEach(function (box) {
+        var btn = box.querySelector(".copy");
+        var code = box.querySelector("code");
+        if (!btn || !code) return;
+        btn.addEventListener("click", function () {
+          var text = code.textContent || "";
+          navigator.clipboard.writeText(text).then(function () {
+            var prev = btn.textContent;
+            btn.textContent = "복사됨 ✓";
+            btn.classList.add("done");
+            setTimeout(function () { btn.textContent = prev; btn.classList.remove("done"); }, 1500);
+          });
+        });
+      });
     </script>
   </body>
 </html>
