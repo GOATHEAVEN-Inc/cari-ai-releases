@@ -57,13 +57,13 @@ done
 
 echo ""
 if [ "$LINKED" -eq 1 ]; then
-  info "이제 터미널에서 실행하세요:  \033[1mcari\033[0m"
+  info "이제 터미널에서 실행하세요:  cari"
 else
   warn "PATH에 추가가 필요합니다. 아래 중 하나를 실행하세요:"
   echo "    export PATH=\"$BIN_DIR:\$PATH\"    # 현재 셸"
   echo "    sudo ln -sf $LAUNCHER /usr/local/bin/cari   # 전역"
   echo ""
-  info "또는 바로 실행:  \033[1m$LAUNCHER\033[0m"
+  info "또는 바로 실행:  $LAUNCHER"
 fi
 echo ""
 info "서버 주소 설정(선택):  cari config set api https://<서버주소>"
