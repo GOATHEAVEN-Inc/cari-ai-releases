@@ -50,6 +50,8 @@
       .brand b { color: var(--blue); }
       nav.links a { color: var(--ink-2); text-decoration: none; margin-left: 24px; font-size: 14px; font-weight: 600; }
       nav.links a:hover { color: var(--blue); }
+      .lang-toggle { margin-left: 24px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink-2); font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.15s; }
+      .lang-toggle:hover { border-color: var(--blue); color: var(--blue); }
 
       .hero { text-align: center; padding: 84px 0 46px; }
       .badge {
@@ -139,7 +141,8 @@
       @media (max-width: 760px) {
         .hero h1 { font-size: 38px; }
         .grid, .steps, .cmp .row, .term-grid { grid-template-columns: 1fr; }
-        nav.links { display: none; }
+        nav.links a { display: none; }
+        .lang-toggle { margin-left: 0; }
       }
     </style>
   </head>
@@ -148,19 +151,20 @@
       <div class="nav">
         <div class="brand"><span class="mark" id="brandMark"></span> <span>CARI <b>AI</b></span></div>
         <nav class="links">
-          <a href="#features">기능</a>
-          <a href="#terminal">터미널</a>
-          <a href="#install">설치</a>
-          <a href="#download">다운로드</a>
+          <a href="#features" data-i18n="nav_features">기능</a>
+          <a href="#terminal" data-i18n="nav_terminal">터미널</a>
+          <a href="#install" data-i18n="nav_install">설치</a>
+          <a href="#download" data-i18n="nav_download">다운로드</a>
+          <button id="langToggle" class="lang-toggle" aria-label="Language">🌐 <span id="langLabel">한국어</span></button>
         </nav>
       </div>
     </header>
 
     <div class="wrap">
       <div class="hero" id="download">
-        <span class="badge"><span class="dot"></span> 라이브 서비스 · 범용 AI 어시스턴트</span>
-        <h1>어떤 물음에도 답하고,<br /><span class="grad">내 기기까지 움직입니다</span></h1>
-        <p class="sub">날씨부터 코드 작성, 여행 계획까지 대화로 답하고 — TV·조명·PC·POS 같은 생활 기기도 자연어로 조작합니다. 기억하고, 이어서 대화하고, 안전하게.</p>
+        <span class="badge"><span class="dot"></span> <span data-i18n="badge">라이브 서비스 · 범용 AI 어시스턴트</span></span>
+        <h1 data-i18n="hero_h1" data-i18n-html>어떤 물음에도 답하고,<br /><span class="grad">내 기기까지 움직입니다</span></h1>
+        <p class="sub" data-i18n="hero_sub">날씨부터 코드 작성, 여행 계획까지 대화로 답하고 — TV·조명·PC·POS 같은 생활 기기도 자연어로 조작합니다. 기억하고, 이어서 대화하고, 안전하게.</p>
 
         <div class="downloads">
           <a class="btn primary" id="primaryDownload" href="#">
@@ -169,13 +173,13 @@
           </a>
           <a class="btn ghost" id="webConsole" href="#">
             <span class="os">💬</span>
-            <span>웹에서 바로 대화<small>설치 없이 브라우저에서</small></span>
+            <span><span data-i18n="web_console">웹에서 바로 대화</span><small data-i18n="web_console_sub">설치 없이 브라우저에서</small></span>
           </a>
         </div>
         <p class="alt-os" id="altOs"></p>
 
         <div class="hero-term">
-          <span class="hero-term-label">또는 터미널에서 바로</span>
+          <span class="hero-term-label" data-i18n="hero_term_label">또는 터미널에서 바로</span>
           <div class="code" data-copy>
             <code>curl -fsSL https://goatheaven-inc.github.io/cari-ai-releases/install.sh | sh</code>
             <button class="copy" aria-label="복사">복사</button>
@@ -184,23 +188,23 @@
       </div>
 
       <section id="features">
-        <h2>무엇이 다른가</h2>
-        <p class="lead">오픈클로·헤르메스AI와 달리, 설치도 사용도 가장 쉽게.</p>
+        <h2 data-i18n="feat_h2">무엇이 다른가</h2>
+        <p class="lead" data-i18n="feat_lead">오픈클로·헤르메스AI와 달리, 설치도 사용도 가장 쉽게.</p>
         <div class="grid">
-          <div class="card"><div class="ico">💬</div><h3>범용 Q&amp;A</h3><p>지식 질문부터 코드·글쓰기까지 대화로 바로 답합니다.</p></div>
-          <div class="card"><div class="ico">🧠</div><h3>기억하는 AI</h3><p>“…기억해줘” 한마디면 저장하고, 다음 대화에서 알아서 떠올립니다.</p></div>
-          <div class="card"><div class="ico">🖼️</div><h3>이미지 이해</h3><p>사진을 붙이면 내용을 읽고 분석합니다(멀티모달 비전).</p></div>
-          <div class="card"><div class="ico">🔌</div><h3>기기 조작</h3><p>TV·에어컨·조명·PC·POS를 자연어 한 문장으로 제어합니다.</p></div>
-          <div class="card"><div class="ico">⚡</div><h3>실시간 스트리밍</h3><p>답변이 생성되는 대로 즉시 흘러나옵니다.</p></div>
-          <div class="card"><div class="ico">💛</div><h3>카카오톡에서도</h3><p>카리 카카오톡 채널에 말 걸면 그대로 답합니다. 앱 설치 없이 톡으로.</p></div>
-          <div class="card"><div class="ico">🌍</div><h3>모든 언어로</h3><p>한국어·English·日本語·中文·Español 등 9개 언어. 첫 실행에 언어를 고르세요.</p></div>
-          <div class="card"><div class="ico">🔒</div><h3>안전·보안 우선</h3><p>결제·비밀번호 등 위험 작업은 자동 차단, 최고 수준 보안 하드닝.</p></div>
+          <div class="card"><div class="ico">💬</div><h3 data-i18n="f1_t">범용 Q&amp;A</h3><p data-i18n="f1_d">지식 질문부터 코드·글쓰기까지 대화로 바로 답합니다.</p></div>
+          <div class="card"><div class="ico">🧠</div><h3 data-i18n="f2_t">기억하는 AI</h3><p data-i18n="f2_d">“…기억해줘” 한마디면 저장하고, 다음 대화에서 알아서 떠올립니다.</p></div>
+          <div class="card"><div class="ico">🖼️</div><h3 data-i18n="f3_t">이미지 이해</h3><p data-i18n="f3_d">사진을 붙이면 내용을 읽고 분석합니다(멀티모달 비전).</p></div>
+          <div class="card"><div class="ico">🔌</div><h3 data-i18n="f4_t">기기 조작</h3><p data-i18n="f4_d">TV·에어컨·조명·PC·POS를 자연어 한 문장으로 제어합니다.</p></div>
+          <div class="card"><div class="ico">⚡</div><h3 data-i18n="f5_t">실시간 스트리밍</h3><p data-i18n="f5_d">답변이 생성되는 대로 즉시 흘러나옵니다.</p></div>
+          <div class="card"><div class="ico">💛</div><h3 data-i18n="f6_t">카카오톡에서도</h3><p data-i18n="f6_d">카리 카카오톡 채널에 말 걸면 그대로 답합니다. 앱 설치 없이 톡으로.</p></div>
+          <div class="card"><div class="ico">🌍</div><h3 data-i18n="f7_t">모든 언어로</h3><p data-i18n="f7_d">한국어·English·日本語·中文·Español 등 9개 언어. 첫 실행에 언어를 고르세요.</p></div>
+          <div class="card"><div class="ico">🔒</div><h3 data-i18n="f8_t">안전·보안 우선</h3><p data-i18n="f8_d">결제·비밀번호 등 위험 작업은 자동 차단, 최고 수준 보안 하드닝.</p></div>
         </div>
       </section>
 
       <section id="terminal">
-        <h2>터미널에서 바로</h2>
-        <p class="lead">오픈클로·헤르메스처럼, 한 줄 명령으로 설치하고 대화하세요. (Node.js 18+ 필요)</p>
+        <h2 data-i18n="term_h2">터미널에서 바로</h2>
+        <p class="lead" data-i18n="term_lead">오픈클로·헤르메스처럼, 한 줄 명령으로 설치하고 대화하세요. (Node.js 18+ 필요)</p>
         <div class="term-grid">
           <div class="term-card">
             <div class="term-os">🍎 🐧 macOS / Linux</div>
@@ -221,38 +225,38 @@
 <span class="b">카리 ›</span> 거실 조명을 끄는 실행 계획을 준비했어요.
 <span class="d">  🧠 기억 참조: 여행 일정</span></pre>
         </div>
-        <p class="term-note">설치 후 <code>cari</code> 로 대화, <code>cari "질문"</code> 로 한 줄 질문, <code>cari remember "..."</code> 로 기억. 자세히는 <a href="https://github.com/GOATHEAVEN-Inc/cari-ai-releases#readme">문서</a>.</p>
+        <p class="term-note" data-i18n="term_note" data-i18n-html>설치 후 <code>cari</code> 로 대화, <code>cari "질문"</code> 로 한 줄 질문, <code>cari remember "..."</code> 로 기억. 자세히는 <a href="https://github.com/GOATHEAVEN-Inc/cari-ai-releases#readme">문서</a>.</p>
       </section>
 
       <section id="install">
-        <h2>3단계면 끝</h2>
-        <p class="lead">터미널 없이, 일반 앱처럼 설치합니다.</p>
+        <h2 data-i18n="inst_h2">3단계면 끝</h2>
+        <p class="lead" data-i18n="inst_lead">터미널 없이, 일반 앱처럼 설치합니다.</p>
         <div class="steps">
-          <div class="step"><h3>내려받기</h3><p>내 OS에 맞는 설치 파일(.dmg / .exe)을 받습니다.</p></div>
-          <div class="step"><h3>설치</h3><p>Mac은 드래그, Windows는 설치 관리자로 다음·다음.</p></div>
-          <div class="step"><h3>실행</h3><p>앱을 열고 바로 대화를 시작합니다.</p></div>
+          <div class="step"><h3 data-i18n="s1_t">내려받기</h3><p data-i18n="s1_d">내 OS에 맞는 설치 파일(.dmg / .exe)을 받습니다.</p></div>
+          <div class="step"><h3 data-i18n="s2_t">설치</h3><p data-i18n="s2_d">Mac은 드래그, Windows는 설치 관리자로 다음·다음.</p></div>
+          <div class="step"><h3 data-i18n="s3_t">실행</h3><p data-i18n="s3_d">앱을 열고 바로 대화를 시작합니다.</p></div>
         </div>
         <div class="cmp">
-          <div class="row"><div>설치 방식</div><div>CARI AI</div><div>CLI형 도구</div></div>
-          <div class="row"><div>터미널 필요</div><div class="no">아니오</div><div class="yes">예</div></div>
-          <div class="row"><div>더블클릭 설치</div><div class="yes">예 (.dmg/.exe)</div><div class="no">—</div></div>
-          <div class="row"><div>설치 없이 웹 사용</div><div class="yes">가능</div><div class="no">—</div></div>
+          <div class="row"><div data-i18n="cmp_h1">설치 방식</div><div>CARI AI</div><div data-i18n="cmp_cli">CLI형 도구</div></div>
+          <div class="row"><div data-i18n="cmp_r1">터미널 필요</div><div class="no" data-i18n="cmp_no">아니오</div><div class="yes" data-i18n="cmp_yes">예</div></div>
+          <div class="row"><div data-i18n="cmp_r2">더블클릭 설치</div><div class="yes">예 (.dmg/.exe)</div><div class="no">—</div></div>
+          <div class="row"><div data-i18n="cmp_r3">설치 없이 웹 사용</div><div class="yes" data-i18n="cmp_ok">가능</div><div class="no">—</div></div>
         </div>
       </section>
 
       <section class="cta">
-        <h2>지금 시작하세요</h2>
-        <p class="lead">설치 1분, 대화는 바로.</p>
+        <h2 data-i18n="cta_h2">지금 시작하세요</h2>
+        <p class="lead" data-i18n="cta_lead">설치 1분, 대화는 바로.</p>
         <div class="downloads">
           <a class="btn primary" id="primaryDownload2" href="#"><span class="os" id="primaryIcon2">🖥️</span><span id="primaryLabel2">다운로드</span></a>
-          <a class="btn ghost" id="webConsole2" href="#"><span class="os">💬</span><span>웹에서 바로 대화</span></a>
+          <a class="btn ghost" id="webConsole2" href="#"><span class="os">💬</span><span data-i18n="web_console">웹에서 바로 대화</span></a>
         </div>
         <p class="alt-os" id="altOs2"></p>
       </section>
     </div>
 
     <footer>
-      <div class="wrap">© <span id="year"></span> CARI AI · 범용 AI 어시스턴트</div>
+      <div class="wrap">© <span id="year"></span> CARI AI · <span data-i18n="footer">범용 AI 어시스턴트</span></div>
     </footer>
 
     <script>
@@ -272,22 +276,96 @@
       else if (/Linux/i.test(plat) && !/Android/i.test(ua)) OS = { name: "Linux", key: "linux", icon: "🐧" };
 
       var dlUrl = RELEASES_BASE + FILES[OS.key];
-      function setPrimary(btn, icon, label, hint) {
-        var b = document.getElementById(btn); if (!b) return;
-        b.href = dlUrl;
-        var i = document.getElementById(icon); if (i) i.textContent = OS.icon;
-        var l = document.getElementById(label); if (l) l.textContent = OS.name + " 다운로드";
-        if (hint) { var h = document.getElementById(hint); if (h) h.textContent = OS.name + "용 설치 파일"; }
-      }
-      setPrimary("primaryDownload", "primaryIcon", "primaryLabel", "primaryHint");
-      setPrimary("primaryDownload2", "primaryIcon2", "primaryLabel2");
+      document.getElementById("primaryIcon").textContent = OS.icon;
+      var pi2 = document.getElementById("primaryIcon2"); if (pi2) pi2.textContent = OS.icon;
+      ["primaryDownload", "primaryDownload2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.href = dlUrl; });
       ["webConsole", "webConsole2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.href = WEB_CONSOLE_URL; });
-
       var others = [
         { key: "mac", label: "macOS(.dmg)" }, { key: "win", label: "Windows(.exe)" }, { key: "linux", label: "Linux(.AppImage)" }
       ].filter(function (o) { return o.key !== OS.key; });
-      var altHtml = "다른 플랫폼: " + others.map(function (o) { return '<a href="' + RELEASES_BASE + FILES[o.key] + '">' + o.label + "</a>"; }).join(" · ");
-      ["altOs", "altOs2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.innerHTML = altHtml; });
+
+      // ── 랜딩 다국어(i18n): 브라우저 언어 감지 + KO/EN 토글 ──
+      var I18N = {
+        ko: {
+          nav_features: "기능", nav_terminal: "터미널", nav_install: "설치", nav_download: "다운로드",
+          badge: "라이브 서비스 · 범용 AI 어시스턴트",
+          hero_h1: '어떤 물음에도 답하고,<br /><span class="grad">내 기기까지 움직입니다</span>',
+          hero_sub: "날씨부터 코드 작성, 여행 계획까지 대화로 답하고 — TV·조명·PC·POS 같은 생활 기기도 자연어로 조작합니다. 기억하고, 이어서 대화하고, 안전하게.",
+          hero_term_label: "또는 터미널에서 바로",
+          feat_h2: "무엇이 다른가", feat_lead: "오픈클로·헤르메스AI와 달리, 설치도 사용도 가장 쉽게.",
+          f1_t: "범용 Q&A", f1_d: "지식 질문부터 코드·글쓰기까지 대화로 바로 답합니다.",
+          f2_t: "기억하는 AI", f2_d: "“…기억해줘” 한마디면 저장하고, 다음 대화에서 알아서 떠올립니다.",
+          f3_t: "이미지 이해", f3_d: "사진을 붙이면 내용을 읽고 분석합니다(멀티모달 비전).",
+          f4_t: "기기 조작", f4_d: "TV·에어컨·조명·PC·POS를 자연어 한 문장으로 제어합니다.",
+          f5_t: "실시간 스트리밍", f5_d: "답변이 생성되는 대로 즉시 흘러나옵니다.",
+          f6_t: "카카오톡에서도", f6_d: "카리 카카오톡 채널에 말 걸면 그대로 답합니다. 앱 설치 없이 톡으로.",
+          f7_t: "모든 언어로", f7_d: "한국어·English·日本語·中文·Español 등 9개 언어. 첫 실행에 언어를 고르세요.",
+          f8_t: "안전·보안 우선", f8_d: "결제·비밀번호 등 위험 작업은 자동 차단, 최고 수준 보안 하드닝.",
+          term_h2: "터미널에서 바로", term_lead: "오픈클로·헤르메스처럼, 한 줄 명령으로 설치하고 대화하세요. (Node.js 18+ 필요)",
+          term_note: '설치 후 <code>cari</code> 로 대화, <code>cari "질문"</code> 로 한 줄 질문, <code>cari remember "..."</code> 로 기억. 자세히는 <a href="https://github.com/GOATHEAVEN-Inc/cari-ai-releases#readme">문서</a>.',
+          inst_h2: "3단계면 끝", inst_lead: "터미널 없이, 일반 앱처럼 설치합니다.",
+          s1_t: "내려받기", s1_d: "내 OS에 맞는 설치 파일(.dmg / .exe)을 받습니다.",
+          s2_t: "설치", s2_d: "Mac은 드래그, Windows는 설치 관리자로 다음·다음.",
+          s3_t: "실행", s3_d: "앱을 열고 바로 대화를 시작합니다.",
+          cmp_h1: "설치 방식", cmp_cli: "CLI형 도구", cmp_r1: "터미널 필요", cmp_no: "아니오", cmp_yes: "예",
+          cmp_r2: "더블클릭 설치", cmp_r3: "설치 없이 웹 사용", cmp_ok: "가능",
+          cta_h2: "지금 시작하세요", cta_lead: "설치 1분, 대화는 바로.",
+          web_console: "웹에서 바로 대화", web_console_sub: "설치 없이 브라우저에서", footer: "범용 AI 어시스턴트",
+          _dl: "{os} 다운로드", _dlhint: "{os}용 설치 파일", _alt: "다른 플랫폼: ", _copy: "복사", _copied: "복사됨 ✓", _other: "기타"
+        },
+        en: {
+          nav_features: "Features", nav_terminal: "Terminal", nav_install: "Install", nav_download: "Download",
+          badge: "Live service · General AI assistant",
+          hero_h1: 'Answers anything —<br /><span class="grad">and moves your devices</span>',
+          hero_sub: "From weather to writing code and trip plans, it answers in chat — and controls devices like your TV, lights, PC, and POS in plain language. It remembers, continues the conversation, and stays safe.",
+          hero_term_label: "Or straight from the terminal",
+          feat_h2: "What's different", feat_lead: "Unlike OpenClo & Hermes AI — the easiest to install and use.",
+          f1_t: "General Q&A", f1_d: "From knowledge questions to code and writing, answered right in chat.",
+          f2_t: "AI that remembers", f2_d: "Just say “remember this” and it saves — then recalls it in later chats.",
+          f3_t: "Understands images", f3_d: "Attach a photo and it reads and analyzes it (multimodal vision).",
+          f4_t: "Device control", f4_d: "Control your TV, AC, lights, PC, and POS with one plain sentence.",
+          f5_t: "Real-time streaming", f5_d: "Answers stream out as they're generated.",
+          f6_t: "On KakaoTalk too", f6_d: "Message the CARI KakaoTalk channel and it replies — no app install, right in chat.",
+          f7_t: "Every language", f7_d: "Korean, English, 日本語, 中文, Español and more — 9 languages. Pick yours on first run.",
+          f8_t: "Safety & security first", f8_d: "Risky actions like payments and passwords are auto-blocked, with top-tier hardening.",
+          term_h2: "Straight from the terminal", term_lead: "Like OpenClo & Hermes — install and chat with one command. (Node.js 18+ required)",
+          term_note: 'After install: <code>cari</code> to chat, <code>cari "question"</code> for a one-liner, <code>cari remember "..."</code> to remember. More in the <a href="https://github.com/GOATHEAVEN-Inc/cari-ai-releases#readme">docs</a>.',
+          inst_h2: "Done in 3 steps", inst_lead: "No terminal — install like a normal app.",
+          s1_t: "Download", s1_d: "Get the installer for your OS (.dmg / .exe).",
+          s2_t: "Install", s2_d: "Drag on Mac; next-next with the installer on Windows.",
+          s3_t: "Launch", s3_d: "Open the app and start chatting right away.",
+          cmp_h1: "Install method", cmp_cli: "CLI-type tools", cmp_r1: "Terminal required", cmp_no: "No", cmp_yes: "Yes",
+          cmp_r2: "Double-click install", cmp_r3: "Use on web, no install", cmp_ok: "Yes",
+          cta_h2: "Get started now", cta_lead: "One minute to install, chat right away.",
+          web_console: "Chat on the web", web_console_sub: "No install, right in your browser", footer: "General AI assistant",
+          _dl: "{os} download", _dlhint: "Installer for {os}", _alt: "Other platforms: ", _copy: "Copy", _copied: "Copied ✓", _other: "Other"
+        }
+      };
+      function pickLang() {
+        try { var s = localStorage.getItem("cari_lang_landing"); if (s === "ko" || s === "en") return s; } catch (e) {}
+        return /^ko/i.test(navigator.language || "") ? "ko" : "en";
+      }
+      var LANG = pickLang();
+      function t(k) { return (I18N[LANG] && I18N[LANG][k] != null) ? I18N[LANG][k] : (I18N.ko[k] || ""); }
+      function applyLang(lang) {
+        LANG = lang;
+        try { localStorage.setItem("cari_lang_landing", lang); } catch (e) {}
+        document.documentElement.lang = lang;
+        var ll = document.getElementById("langLabel"); if (ll) ll.textContent = lang === "ko" ? "한국어" : "English";
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var k = el.getAttribute("data-i18n"); var v = I18N[lang][k]; if (v == null) return;
+          if (el.hasAttribute("data-i18n-html")) el.innerHTML = v; else el.textContent = v;
+        });
+        var osName = OS.name === "기타" ? t("_other") : OS.name;
+        ["primaryLabel", "primaryLabel2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.textContent = t("_dl").replace("{os}", osName); });
+        var ph = document.getElementById("primaryHint"); if (ph) ph.textContent = t("_dlhint").replace("{os}", osName);
+        var altHtml = t("_alt") + others.map(function (o) { return '<a href="' + RELEASES_BASE + FILES[o.key] + '">' + o.label + "</a>"; }).join(" · ");
+        ["altOs", "altOs2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.innerHTML = altHtml; });
+        document.querySelectorAll(".copy").forEach(function (b) { if (!b.classList.contains("done")) b.textContent = t("_copy"); });
+      }
+      var lt = document.getElementById("langToggle");
+      if (lt) lt.addEventListener("click", function () { applyLang(LANG === "ko" ? "en" : "ko"); });
+      applyLang(LANG);
 
       document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -296,8 +374,8 @@
         if (!btn || !code) return;
         btn.addEventListener("click", function () {
           navigator.clipboard.writeText(code.textContent || "").then(function () {
-            var prev = btn.textContent; btn.textContent = "복사됨 ✓"; btn.classList.add("done");
-            setTimeout(function () { btn.textContent = prev; btn.classList.remove("done"); }, 1500);
+            btn.textContent = t("_copied"); btn.classList.add("done");
+            setTimeout(function () { btn.textContent = t("_copy"); btn.classList.remove("done"); }, 1500);
           });
         });
       });
