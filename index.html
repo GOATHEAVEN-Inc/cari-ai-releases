@@ -129,10 +129,13 @@
       .step h3 { font-size: 15.5px; font-weight: 800; margin: 10px 0 5px; }
       .step p { color: var(--ink-2); font-size: 13.5px; }
 
-      .cmp { max-width: 640px; margin: 24px auto 0; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); }
-      .cmp .row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; }
-      .cmp .row > div { padding: 13px 16px; border-top: 1px solid var(--line); font-size: 14px; }
-      .cmp .row:first-child > div { border-top: none; font-weight: 800; background: var(--blue-50); color: var(--ink); }
+      .cmp { max-width: 860px; margin: 24px auto 0; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); }
+      .cmp-scroll { overflow-x: auto; }
+      .cmp .row { display: grid; grid-template-columns: 1.5fr 1.2fr 1fr 1fr; min-width: 640px; }
+      .cmp .row > div { padding: 13px 15px; border-top: 1px solid var(--line); font-size: 13.5px; }
+      .cmp .row:first-child > div { border-top: none; font-weight: 800; background: #f8fafc; color: var(--ink); }
+      .cmp .row > div:nth-child(2) { background: var(--blue-50); font-weight: 600; }
+      .cmp .row:first-child > div:nth-child(2) { background: linear-gradient(135deg, var(--blue), var(--blue-strong)); color: #fff; }
       .cmp .yes { color: var(--blue-strong); font-weight: 700; }
       .cmp .no { color: var(--ink-3); }
 
@@ -141,7 +144,7 @@
 
       @media (max-width: 760px) {
         .hero h1 { font-size: 38px; }
-        .grid, .steps, .cmp .row, .term-grid { grid-template-columns: 1fr; }
+        .grid, .steps, .term-grid { grid-template-columns: 1fr; }
         nav.links a { display: none; }
         .lang-toggle { margin-left: 0; }
         /* 모바일: 히어로 설치 명령이 넘쳐 복사 버튼이 화면 밖으로 밀리지 않게 줄바꿈 */
@@ -241,12 +244,26 @@
           <div class="step"><h3 data-i18n="s2_t">설치</h3><p data-i18n="s2_d">Mac은 드래그, Windows는 설치 관리자로 다음·다음.</p></div>
           <div class="step"><h3 data-i18n="s3_t">실행</h3><p data-i18n="s3_d">앱을 열고 바로 대화를 시작합니다.</p></div>
         </div>
+        <h2 style="margin-top:56px" data-i18n="cmp_title">오픈클로·헤르메스와 비교</h2>
+        <p class="lead" data-i18n="cmp_lead">기능은 강력하지만 설치·설정이 어려운 개발자용 도구와 달리, 카리는 누구나 바로 씁니다.</p>
         <div class="cmp">
-          <div class="row"><div data-i18n="cmp_h1">설치 방식</div><div>CARI AI</div><div data-i18n="cmp_cli">CLI형 도구</div></div>
-          <div class="row"><div data-i18n="cmp_r1">터미널 필요</div><div class="no" data-i18n="cmp_no">아니오</div><div class="yes" data-i18n="cmp_yes">예</div></div>
-          <div class="row"><div data-i18n="cmp_r2">더블클릭 설치</div><div class="yes">예 (.dmg/.exe)</div><div class="no">—</div></div>
-          <div class="row"><div data-i18n="cmp_r3">설치 없이 웹 사용</div><div class="yes" data-i18n="cmp_ok">가능</div><div class="no">—</div></div>
+          <div class="cmp-scroll">
+            <div class="row">
+              <div data-i18n="cmp_h_feature">항목</div><div>CARI AI</div>
+              <div data-i18n="cmp_h_openclo">오픈클로</div><div data-i18n="cmp_h_hermes">헤르메스AI</div>
+            </div>
+            <div class="row"><div data-i18n="cmp_r_setup">제로설정 (설치 즉시 사용)</div><div class="yes">✓</div><div class="no">—</div><div class="no">—</div></div>
+            <div class="row"><div data-i18n="cmp_r_desktop">데스크톱 앱 (더블클릭 설치)</div><div class="yes">✓</div><div class="no">—</div><div class="no">—</div></div>
+            <div class="row"><div data-i18n="cmp_r_access">웹·앱·CLI·카카오톡 접근</div><div class="yes">✓</div><div class="no" data-i18n="cmp_cli_only">CLI</div><div class="no">CLI/TUI</div></div>
+            <div class="row"><div data-i18n="cmp_r_nokey">LLM 키·구독 불필요 (관리형)</div><div class="yes">✓</div><div class="no">—</div><div class="no">—</div></div>
+            <div class="row"><div data-i18n="cmp_r_lang">다국어 UI (12개 언어)</div><div class="yes">✓</div><div class="no" data-i18n="cmp_en">영어 위주</div><div class="no" data-i18n="cmp_en">영어 위주</div></div>
+            <div class="row"><div data-i18n="cmp_r_control">컴퓨터·생활기기 조작</div><div class="yes">✓</div><div class="no" data-i18n="cmp_limited">제한적</div><div class="yes">✓</div></div>
+            <div class="row"><div data-i18n="cmp_r_nonintrusive">비침습 (내 마우스·화면 안 뺏김)</div><div class="yes">✓</div><div class="no">—</div><div class="no">—</div></div>
+            <div class="row"><div data-i18n="cmp_r_safety">안전 차단 + 실행 감사 로그</div><div class="yes">✓</div><div class="no">—</div><div class="no" data-i18n="cmp_partial">부분</div></div>
+            <div class="row"><div data-i18n="cmp_r_price">종량제 (원화·월 무료 한도)</div><div class="yes">✓</div><div class="no" data-i18n="cmp_opensource">오픈소스(키 비용)</div><div class="no" data-i18n="cmp_sub">구독</div></div>
+          </div>
         </div>
+        <p class="term-note" style="text-align:center;margin-top:14px" data-i18n="cmp_note">오픈클로·헤르메스는 강력한 오픈소스 터미널 에이전트입니다. 카리는 그 위에 <b>제로설정·다국어·데스크톱·안전성</b>을 더해 일반 사용자도 쓰게 만든 서비스입니다.</p>
       </section>
 
       <section class="cta">
@@ -314,6 +331,15 @@
           s3_t: "실행", s3_d: "앱을 열고 바로 대화를 시작합니다.",
           cmp_h1: "설치 방식", cmp_cli: "CLI형 도구", cmp_r1: "터미널 필요", cmp_no: "아니오", cmp_yes: "예",
           cmp_r2: "더블클릭 설치", cmp_r3: "설치 없이 웹 사용", cmp_ok: "가능",
+          cmp_title: "오픈클로·헤르메스와 비교", cmp_lead: "기능은 강력하지만 설치·설정이 어려운 개발자용 도구와 달리, 카리는 누구나 바로 씁니다.",
+          cmp_h_feature: "항목", cmp_h_openclo: "오픈클로", cmp_h_hermes: "헤르메스AI",
+          cmp_r_setup: "제로설정 (설치 즉시 사용)", cmp_r_desktop: "데스크톱 앱 (더블클릭 설치)",
+          cmp_r_access: "웹·앱·CLI·카카오톡 접근", cmp_cli_only: "CLI",
+          cmp_r_nokey: "LLM 키·구독 불필요 (관리형)", cmp_r_lang: "다국어 UI (12개 언어)", cmp_en: "영어 위주",
+          cmp_r_control: "컴퓨터·생활기기 조작", cmp_limited: "제한적",
+          cmp_r_nonintrusive: "비침습 (내 마우스·화면 안 뺏김)", cmp_r_safety: "안전 차단 + 실행 감사 로그", cmp_partial: "부분",
+          cmp_r_price: "종량제 (원화·월 무료 한도)", cmp_opensource: "오픈소스(키 비용)", cmp_sub: "구독",
+          cmp_note: "오픈클로·헤르메스는 강력한 오픈소스 터미널 에이전트입니다. 카리는 그 위에 제로설정·다국어·데스크톱·안전성을 더해 일반 사용자도 쓰게 만든 서비스입니다.",
           cta_h2: "지금 시작하세요", cta_lead: "설치 1분, 대화는 바로.",
           web_console: "웹에서 바로 대화", web_console_sub: "설치 없이 브라우저에서", footer: "범용 AI 어시스턴트",
           _dl: "{os} 다운로드", _dlhint: "{os}용 설치 파일", _alt: "다른 플랫폼: ", _copy: "복사", _copied: "복사됨 ✓", _other: "기타"
@@ -341,6 +367,15 @@
           s3_t: "Launch", s3_d: "Open the app and start chatting right away.",
           cmp_h1: "Install method", cmp_cli: "CLI-type tools", cmp_r1: "Terminal required", cmp_no: "No", cmp_yes: "Yes",
           cmp_r2: "Double-click install", cmp_r3: "Use on web, no install", cmp_ok: "Yes",
+          cmp_title: "Compared to OpenClo & Hermes", cmp_lead: "Powerful but hard to install dev tools — CARI just works for everyone.",
+          cmp_h_feature: "Feature", cmp_h_openclo: "OpenClo", cmp_h_hermes: "Hermes AI",
+          cmp_r_setup: "Zero-setup (use instantly)", cmp_r_desktop: "Desktop app (double-click)",
+          cmp_r_access: "Web · app · CLI · KakaoTalk", cmp_cli_only: "CLI",
+          cmp_r_nokey: "No LLM key/subscription (managed)", cmp_r_lang: "Multilingual UI (12 languages)", cmp_en: "English-first",
+          cmp_r_control: "Computer & device control", cmp_limited: "Limited",
+          cmp_r_nonintrusive: "Non-intrusive (won't grab your mouse)", cmp_r_safety: "Safety block + activity audit log", cmp_partial: "Partial",
+          cmp_r_price: "Usage-based (KRW, free tier)", cmp_opensource: "Open-source (key cost)", cmp_sub: "Subscription",
+          cmp_note: "OpenClo & Hermes are powerful open-source terminal agents. CARI adds zero-setup, multilingual, desktop, and safety on top — so anyone can use it.",
           cta_h2: "Get started now", cta_lead: "One minute to install, chat right away.",
           web_console: "Chat on the web", web_console_sub: "No install, right in your browser", footer: "General AI assistant",
           _dl: "{os} download", _dlhint: "Installer for {os}", _alt: "Other platforms: ", _copy: "Copy", _copied: "Copied ✓", _other: "Other"
