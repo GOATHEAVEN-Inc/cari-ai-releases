@@ -52,6 +52,7 @@
       nav.links a:hover { color: var(--blue); }
       .lang-toggle { margin-left: 24px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink-2); font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.15s; }
       .lang-toggle:hover { border-color: var(--blue); color: var(--blue); }
+      .soon { display: inline-block; font-size: 11px; font-weight: 700; color: #b45309; background: #fef3c7; border-radius: 999px; padding: 2px 8px; margin-left: 4px; vertical-align: middle; letter-spacing: 0; }
 
       .hero { text-align: center; padding: 84px 0 46px; }
       .badge {
@@ -196,7 +197,7 @@
           <div class="card"><div class="ico">🖼️</div><h3 data-i18n="f3_t">이미지 이해</h3><p data-i18n="f3_d">사진을 붙이면 내용을 읽고 분석합니다(멀티모달 비전).</p></div>
           <div class="card"><div class="ico">🔌</div><h3 data-i18n="f4_t">기기 조작</h3><p data-i18n="f4_d">TV·에어컨·조명·PC·POS를 자연어 한 문장으로 제어합니다.</p></div>
           <div class="card"><div class="ico">⚡</div><h3 data-i18n="f5_t">실시간 스트리밍</h3><p data-i18n="f5_d">답변이 생성되는 대로 즉시 흘러나옵니다.</p></div>
-          <div class="card"><div class="ico">💛</div><h3 data-i18n="f6_t">카카오톡에서도</h3><p data-i18n="f6_d">카리 카카오톡 채널에 말 걸면 그대로 답합니다. 앱 설치 없이 톡으로.</p></div>
+          <div class="card"><div class="ico">💛</div><h3><span data-i18n="f6_t">카카오톡에서도</span> <span class="soon" data-i18n="soon">준비 중</span></h3><p data-i18n="f6_d">카리 카카오톡 채널에 말 걸면 그대로 답합니다 — 앱 설치 없이 톡으로. (채널 오픈 준비 중)</p></div>
           <div class="card"><div class="ico">🌍</div><h3 data-i18n="f7_t">모든 언어로</h3><p data-i18n="f7_d">한국어·English·日本語·中文·Español 등 9개 언어. 첫 실행에 언어를 고르세요.</p></div>
           <div class="card"><div class="ico">🔒</div><h3 data-i18n="f8_t">안전·보안 우선</h3><p data-i18n="f8_d">결제·비밀번호 등 위험 작업은 자동 차단, 최고 수준 보안 하드닝.</p></div>
         </div>
@@ -298,7 +299,7 @@
           f3_t: "이미지 이해", f3_d: "사진을 붙이면 내용을 읽고 분석합니다(멀티모달 비전).",
           f4_t: "기기 조작", f4_d: "TV·에어컨·조명·PC·POS를 자연어 한 문장으로 제어합니다.",
           f5_t: "실시간 스트리밍", f5_d: "답변이 생성되는 대로 즉시 흘러나옵니다.",
-          f6_t: "카카오톡에서도", f6_d: "카리 카카오톡 채널에 말 걸면 그대로 답합니다. 앱 설치 없이 톡으로.",
+          f6_t: "카카오톡에서도", f6_d: "카리 카카오톡 채널에 말 걸면 그대로 답합니다 — 앱 설치 없이 톡으로. (채널 오픈 준비 중)", soon: "준비 중",
           f7_t: "모든 언어로", f7_d: "한국어·English·日本語·中文·Español 등 9개 언어. 첫 실행에 언어를 고르세요.",
           f8_t: "안전·보안 우선", f8_d: "결제·비밀번호 등 위험 작업은 자동 차단, 최고 수준 보안 하드닝.",
           term_h2: "터미널에서 바로", term_lead: "오픈클로·헤르메스처럼, 한 줄 명령으로 설치하고 대화하세요. (Node.js 18+ 필요)",
@@ -325,7 +326,7 @@
           f3_t: "Understands images", f3_d: "Attach a photo and it reads and analyzes it (multimodal vision).",
           f4_t: "Device control", f4_d: "Control your TV, AC, lights, PC, and POS with one plain sentence.",
           f5_t: "Real-time streaming", f5_d: "Answers stream out as they're generated.",
-          f6_t: "On KakaoTalk too", f6_d: "Message the CARI KakaoTalk channel and it replies — no app install, right in chat.",
+          f6_t: "On KakaoTalk too", f6_d: "Message the CARI KakaoTalk channel and it replies — no app install, right in chat. (channel launching soon)", soon: "soon",
           f7_t: "Every language", f7_d: "Korean, English, 日本語, 中文, Español and more — 9 languages. Pick yours on first run.",
           f8_t: "Safety & security first", f8_d: "Risky actions like payments and passwords are auto-blocked, with top-tier hardening.",
           term_h2: "Straight from the terminal", term_lead: "Like OpenClo & Hermes — install and chat with one command. (Node.js 18+ required)",
