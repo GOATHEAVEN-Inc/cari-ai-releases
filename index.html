@@ -4,182 +4,172 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <title>카리AI — 어떤 물음에도 답하는 AI, 그리고 내 기기까지</title>
-    <meta name="description" content="카리AI는 범용 AI 어시스턴트이자 생활 기기 조작 엔진입니다. Windows·Mac 설치, 웹에서 바로 사용." />
+    <title>CARI AI — 어떤 물음에도 답하는 AI, 그리고 내 기기까지</title>
+    <meta name="description" content="CARI AI는 범용 AI 어시스턴트이자 생활 기기 조작 엔진입니다. 터미널·Windows·Mac·웹 어디서든." />
     <style>
       :root {
-        --bg: #0d1414;
-        --panel: #12201f;
-        --text: #eaf3f1;
-        --muted: #93a7a3;
-        --brand: #17b3a4;
-        --brand-2: #7c5cff;
-        --line: #223432;
+        --blue: #3b82f6;
+        --blue-strong: #2563eb;
+        --blue-soft: #60a5fa;
+        --blue-50: #eff6ff;
+        --blue-100: #dbeafe;
+        --ink: #191f28;
+        --ink-2: #4e5968;
+        --ink-3: #8b95a1;
+        --line: #e5e8eb;
+        --bg: #ffffff;
+        --glass: rgba(255, 255, 255, 0.72);
+        --shadow: 0 10px 40px rgba(30, 64, 175, 0.1);
+        --shadow-sm: 0 2px 12px rgba(17, 24, 39, 0.06);
       }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       html { scroll-behavior: smooth; }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-        background: radial-gradient(1200px 600px at 50% -10%, #16302c 0%, var(--bg) 55%);
-        color: var(--text);
+        font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", "Noto Sans KR", sans-serif;
+        color: var(--ink);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
+        background:
+          radial-gradient(900px 500px at 15% -8%, #e8f0ff 0%, transparent 55%),
+          radial-gradient(800px 460px at 100% 0%, #eef4ff 0%, transparent 50%),
+          #ffffff;
       }
-      .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+      a { color: inherit; }
 
       header {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 20px 0;
+        position: sticky; top: 0; z-index: 20;
+        background: var(--glass);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
       }
-      .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 19px; }
-      .brand .mark {
-        width: 34px; height: 34px; border-radius: 9px;
-        background: linear-gradient(135deg, var(--brand), #0e8f83);
-        display: grid; place-items: center; color: #041413; font-weight: 900;
-      }
-      nav a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: 14px; }
-      nav a:hover { color: var(--text); }
+      .nav { display: flex; align-items: center; justify-content: space-between; padding: 15px 24px; max-width: 1080px; margin: 0 auto; }
+      .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; letter-spacing: -0.3px; }
+      .brand .mark { width: 34px; height: 34px; border-radius: 11px; background: #fff; box-shadow: var(--shadow-sm); display: grid; place-items: center; }
+      .brand b { color: var(--blue); }
+      nav.links a { color: var(--ink-2); text-decoration: none; margin-left: 24px; font-size: 14px; font-weight: 600; }
+      nav.links a:hover { color: var(--blue); }
 
-      .hero { text-align: center; padding: 66px 0 40px; }
+      .hero { text-align: center; padding: 84px 0 46px; }
       .badge {
-        display: inline-block; padding: 6px 13px; border: 1px solid var(--line);
-        border-radius: 999px; color: var(--brand); font-size: 12.5px; font-weight: 700;
-        background: #0f1d1c; margin-bottom: 22px;
+        display: inline-flex; align-items: center; gap: 7px; padding: 7px 15px; border-radius: 999px;
+        border: 1px solid var(--blue-100); color: var(--blue-strong); font-size: 13px; font-weight: 700;
+        background: var(--blue-50); margin-bottom: 26px;
       }
-      .hero h1 { font-size: 52px; line-height: 1.12; letter-spacing: -1.2px; font-weight: 850; }
-      .hero h1 .grad {
-        background: linear-gradient(100deg, var(--brand), var(--brand-2));
-        -webkit-background-clip: text; background-clip: text; color: transparent;
-      }
-      .hero p.sub { color: var(--muted); font-size: 18px; max-width: 620px; margin: 20px auto 0; }
+      .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 3px rgba(59,130,246,0.2); }
+      .hero h1 { font-size: 56px; line-height: 1.14; letter-spacing: -1.6px; font-weight: 850; color: var(--ink); }
+      .hero h1 .grad { background: linear-gradient(100deg, var(--blue), var(--blue-strong)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .hero p.sub { color: var(--ink-2); font-size: 18px; max-width: 600px; margin: 22px auto 0; }
 
-      .downloads { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 34px 0 12px; }
+      .downloads { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 34px 0 10px; }
       .btn {
-        display: inline-flex; align-items: center; gap: 10px;
-        padding: 15px 26px; border-radius: 12px; font-size: 15.5px; font-weight: 700;
-        text-decoration: none; border: 1px solid transparent; cursor: pointer;
+        display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 16px;
+        font-size: 15.5px; font-weight: 700; text-decoration: none; border: 1px solid transparent; cursor: pointer;
+        transition: transform 0.12s, box-shadow 0.12s;
       }
-      .btn.primary { background: linear-gradient(135deg, var(--brand), #0e8f83); color: #041413; }
-      .btn.primary:hover { filter: brightness(1.07); }
-      .btn.ghost { background: #0f1d1c; color: var(--text); border-color: var(--line); }
-      .btn.ghost:hover { border-color: var(--brand); }
+      .btn.primary { background: linear-gradient(135deg, var(--blue), var(--blue-strong)); color: #fff; box-shadow: 0 8px 22px rgba(59,130,246,0.32); }
+      .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(59,130,246,0.4); }
+      .btn.ghost { background: var(--glass); color: var(--ink); border-color: var(--line); box-shadow: var(--shadow-sm); }
+      .btn.ghost:hover { border-color: var(--blue-soft); color: var(--blue-strong); }
       .btn .os { font-size: 20px; }
-      .btn small { display: block; font-size: 11.5px; font-weight: 600; opacity: 0.7; }
-      .alt-os { color: var(--muted); font-size: 13px; margin-top: 6px; }
-      .alt-os a { color: var(--brand); text-decoration: none; }
+      .btn small { display: block; font-size: 11.5px; font-weight: 600; opacity: 0.75; }
+      .alt-os { color: var(--ink-3); font-size: 13px; margin-top: 8px; }
+      .alt-os a { color: var(--blue); text-decoration: none; }
       .alt-os a:hover { text-decoration: underline; }
 
-      section { padding: 46px 0; border-top: 1px solid var(--line); }
-      section h2 { font-size: 27px; letter-spacing: -0.6px; margin-bottom: 6px; text-align: center; }
-      section .lead { color: var(--muted); text-align: center; margin-bottom: 30px; }
+      .hero-term { max-width: 720px; margin: 30px auto 0; }
+      .hero-term-label { display: block; color: var(--ink-3); font-size: 12.5px; margin-bottom: 8px; }
+
+      section { padding: 54px 0; }
+      section h2 { font-size: 30px; letter-spacing: -0.8px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+      section .lead { color: var(--ink-2); text-align: center; margin-bottom: 34px; font-size: 15.5px; }
 
       .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-      .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
-      .card .ico { font-size: 24px; margin-bottom: 10px; }
-      .card h3 { font-size: 16.5px; margin-bottom: 6px; }
-      .card p { color: var(--muted); font-size: 14px; }
-
-      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: s; }
-      .step { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; position: relative; }
-      .step::before {
-        counter-increment: s; content: counter(s);
-        position: absolute; top: -14px; left: 18px;
-        width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center;
-        background: var(--brand); color: #041413; font-weight: 900;
+      .card {
+        background: var(--glass); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.8);
+        border-radius: 20px; padding: 24px; box-shadow: var(--shadow-sm); transition: transform 0.14s, box-shadow 0.14s;
       }
-      .step h3 { font-size: 15.5px; margin: 8px 0 5px; }
-      .step p { color: var(--muted); font-size: 13.5px; }
+      .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+      .card .ico { width: 46px; height: 46px; border-radius: 13px; background: var(--blue-50); display: grid; place-items: center; font-size: 22px; margin-bottom: 14px; }
+      .card h3 { font-size: 16.5px; font-weight: 800; margin-bottom: 6px; }
+      .card p { color: var(--ink-2); font-size: 14px; }
 
-      .cta { text-align: center; }
-      .cmp { max-width: 640px; margin: 22px auto 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-      .cmp .row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; }
-      .cmp .row > div { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 14px; }
-      .cmp .row:first-child > div { border-top: none; font-weight: 700; background: #0f1d1c; }
-      .cmp .yes { color: var(--brand); font-weight: 700; }
-      .cmp .no { color: #6c807c; }
-
-      footer { border-top: 1px solid var(--line); padding: 30px 0 50px; color: var(--muted); font-size: 13px; text-align: center; }
-
-      /* 코드 블록 + 복사 버튼 */
-      .code {
-        display: flex; align-items: center; gap: 10px;
-        background: #0a1615; border: 1px solid var(--line); border-radius: 10px;
-        padding: 12px 12px 12px 16px; overflow-x: auto;
-      }
-      .code code {
-        color: #cdeee8; font-size: 13.5px; white-space: nowrap;
-        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      }
-      .code code::before { content: "$ "; color: var(--brand); }
-      .code .copy {
-        margin-left: auto; flex: 0 0 auto; padding: 5px 12px; border-radius: 7px;
-        border: 1px solid var(--line); background: #12201f; color: var(--muted);
-        font-size: 12px; font-weight: 700; cursor: pointer;
-      }
-      .code .copy:hover { color: var(--text); border-color: var(--brand); }
-      .code .copy.done { color: var(--brand); border-color: var(--brand); }
-
-      .hero-term { max-width: 720px; margin: 26px auto 0; text-align: left; }
-      .hero-term-label { display: block; color: var(--muted); font-size: 12.5px; margin-bottom: 7px; text-align: center; }
+      /* 코드 블록 */
+      .code { display: flex; align-items: center; gap: 10px; background: #0f172a; border-radius: 14px; padding: 14px 14px 14px 18px; overflow-x: auto; box-shadow: var(--shadow-sm); }
+      .code code { color: #cfe0ff; font-size: 13.5px; white-space: nowrap; font-family: "SFMono-Regular", Consolas, monospace; }
+      .code code::before { content: "$ "; color: var(--blue-soft); }
+      .code .copy { margin-left: auto; flex: 0 0 auto; padding: 6px 13px; border-radius: 9px; border: 1px solid #2b3a52; background: #1a2436; color: #93a3bd; font-size: 12px; font-weight: 700; cursor: pointer; }
+      .code .copy:hover { color: #fff; border-color: var(--blue); }
+      .code .copy.done { color: var(--blue-soft); border-color: var(--blue); }
 
       .term-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-      .term-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
-      .term-os { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+      .term-card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 20px; box-shadow: var(--shadow-sm); }
+      .term-os { font-size: 14px; font-weight: 800; margin-bottom: 13px; }
       .term-card .code code { white-space: normal; word-break: break-all; }
 
-      .term-demo { max-width: 720px; margin: 0 auto; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #0a1615; }
-      .term-bar { display: flex; gap: 7px; padding: 12px 14px; background: #10201e; border-bottom: 1px solid var(--line); }
-      .term-bar i { width: 11px; height: 11px; border-radius: 50%; background: #2b4340; }
-      .term-demo pre {
-        margin: 0; padding: 16px 18px; font-size: 13px; line-height: 1.7; overflow-x: auto;
-        font-family: "SFMono-Regular", Consolas, monospace; color: #cdeee8;
-      }
-      .term-demo .p { color: var(--brand); }
-      .term-demo .u { color: var(--accent); font-weight: 700; }
-      .term-demo .b { color: var(--brand); font-weight: 700; }
-      .term-demo .d { color: #6c807c; }
-      .term-note { text-align: center; color: var(--muted); font-size: 13.5px; margin-top: 18px; }
-      .term-note code { background: #10201e; padding: 2px 7px; border-radius: 6px; color: #cdeee8; }
-      .term-note a { color: var(--brand); text-decoration: none; }
+      .term-demo { max-width: 720px; margin: 0 auto; border-radius: 18px; overflow: hidden; background: #0f172a; box-shadow: var(--shadow); }
+      .term-bar { display: flex; gap: 7px; padding: 13px 15px; background: #131f36; border-bottom: 1px solid #1e2b45; }
+      .term-bar i { width: 11px; height: 11px; border-radius: 50%; background: #33456a; }
+      .term-demo pre { margin: 0; padding: 18px 20px; font-size: 13px; line-height: 1.75; overflow-x: auto; font-family: "SFMono-Regular", Consolas, monospace; color: #cfe0ff; }
+      .term-demo .p { color: var(--blue-soft); }
+      .term-demo .u { color: #7cc0ff; font-weight: 700; }
+      .term-demo .b { color: var(--blue-soft); font-weight: 700; }
+      .term-demo .d { color: #6b7a95; }
+      .term-note { text-align: center; color: var(--ink-2); font-size: 14px; margin-top: 20px; }
+      .term-note code { background: var(--blue-50); color: var(--blue-strong); padding: 2px 8px; border-radius: 7px; font-weight: 600; }
+      .term-note a { color: var(--blue); text-decoration: none; }
+
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: s; }
+      .step { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 24px; position: relative; box-shadow: var(--shadow-sm); }
+      .step::before { counter-increment: s; content: counter(s); position: absolute; top: -14px; left: 20px; width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(135deg, var(--blue), var(--blue-strong)); color: #fff; font-weight: 900; box-shadow: 0 4px 12px rgba(59,130,246,0.35); }
+      .step h3 { font-size: 15.5px; font-weight: 800; margin: 10px 0 5px; }
+      .step p { color: var(--ink-2); font-size: 13.5px; }
+
+      .cmp { max-width: 640px; margin: 24px auto 0; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); }
+      .cmp .row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; }
+      .cmp .row > div { padding: 13px 16px; border-top: 1px solid var(--line); font-size: 14px; }
+      .cmp .row:first-child > div { border-top: none; font-weight: 800; background: var(--blue-50); color: var(--ink); }
+      .cmp .yes { color: var(--blue-strong); font-weight: 700; }
+      .cmp .no { color: var(--ink-3); }
+
+      .cta { text-align: center; }
+      footer { border-top: 1px solid var(--line); padding: 30px 0 50px; color: var(--ink-3); font-size: 13px; text-align: center; }
 
       @media (max-width: 760px) {
-        .hero h1 { font-size: 36px; }
+        .hero h1 { font-size: 38px; }
         .grid, .steps, .cmp .row, .term-grid { grid-template-columns: 1fr; }
-        nav { display: none; }
+        nav.links { display: none; }
       }
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <header>
-        <div class="brand"><span class="mark">카</span> 카리AI</div>
-        <nav>
+    <header>
+      <div class="nav">
+        <div class="brand"><span class="mark" id="brandMark"></span> <span>CARI <b>AI</b></span></div>
+        <nav class="links">
           <a href="#features">기능</a>
           <a href="#terminal">터미널</a>
           <a href="#install">설치</a>
           <a href="#download">다운로드</a>
         </nav>
-      </header>
+      </div>
+    </header>
 
+    <div class="wrap">
       <div class="hero" id="download">
-        <span class="badge">범용 AI 어시스턴트 · 생활 기기 조작 엔진</span>
+        <span class="badge"><span class="dot"></span> 라이브 서비스 · 범용 AI 어시스턴트</span>
         <h1>어떤 물음에도 답하고,<br /><span class="grad">내 기기까지 움직입니다</span></h1>
-        <p class="sub">
-          날씨부터 코드 작성, 여행 계획까지 대화로 답하고 — TV·조명·PC·POS 같은 생활 기기도
-          자연어로 조작합니다. 기억하고, 이어서 대화하고, 안전하게.
-        </p>
+        <p class="sub">날씨부터 코드 작성, 여행 계획까지 대화로 답하고 — TV·조명·PC·POS 같은 생활 기기도 자연어로 조작합니다. 기억하고, 이어서 대화하고, 안전하게.</p>
 
         <div class="downloads">
           <a class="btn primary" id="primaryDownload" href="#">
             <span class="os" id="primaryIcon">🖥️</span>
-            <span>
-              <span id="primaryLabel">다운로드</span>
-              <small id="primaryHint">설치 후 더블클릭으로 실행</small>
-            </span>
+            <span><span id="primaryLabel">다운로드</span><small id="primaryHint">설치 후 더블클릭으로 실행</small></span>
           </a>
           <a class="btn ghost" id="webConsole" href="#">
-            <span class="os">🌐</span>
-            <span>웹에서 바로 사용<small>설치 없이 브라우저에서</small></span>
+            <span class="os">💬</span>
+            <span>웹에서 바로 대화<small>설치 없이 브라우저에서</small></span>
           </a>
         </div>
         <p class="alt-os" id="altOs"></p>
@@ -187,7 +177,7 @@
         <div class="hero-term">
           <span class="hero-term-label">또는 터미널에서 바로</span>
           <div class="code" data-copy>
-            <code id="heroCmd">curl -fsSL https://goatheaven-inc.github.io/cari-ai-releases/install.sh | sh</code>
+            <code>curl -fsSL https://goatheaven-inc.github.io/cari-ai-releases/install.sh | sh</code>
             <button class="copy" aria-label="복사">복사</button>
           </div>
         </div>
@@ -199,10 +189,10 @@
         <div class="grid">
           <div class="card"><div class="ico">💬</div><h3>범용 Q&amp;A</h3><p>지식 질문부터 코드·글쓰기까지 대화로 바로 답합니다.</p></div>
           <div class="card"><div class="ico">🧠</div><h3>기억하는 AI</h3><p>“…기억해줘” 한마디면 저장하고, 다음 대화에서 알아서 떠올립니다.</p></div>
+          <div class="card"><div class="ico">🖼️</div><h3>이미지 이해</h3><p>사진을 붙이면 내용을 읽고 분석합니다(멀티모달 비전).</p></div>
           <div class="card"><div class="ico">🔌</div><h3>기기 조작</h3><p>TV·에어컨·조명·PC·POS를 자연어 한 문장으로 제어합니다.</p></div>
           <div class="card"><div class="ico">⚡</div><h3>실시간 스트리밍</h3><p>답변이 생성되는 대로 즉시 흘러나옵니다.</p></div>
           <div class="card"><div class="ico">🔒</div><h3>안전·보안 우선</h3><p>결제·비밀번호 등 위험 작업은 자동 차단, 최고 수준 보안 하드닝.</p></div>
-          <div class="card"><div class="ico">🖥️</div><h3>어디서든</h3><p>Windows·Mac 설치 앱과 웹, 어디서나 같은 경험.</p></div>
         </div>
       </section>
 
@@ -212,34 +202,24 @@
         <div class="term-grid">
           <div class="term-card">
             <div class="term-os">🍎 🐧 macOS / Linux</div>
-            <div class="code" data-copy>
-              <code>curl -fsSL https://goatheaven-inc.github.io/cari-ai-releases/install.sh | sh</code>
-              <button class="copy" aria-label="복사">복사</button>
-            </div>
+            <div class="code" data-copy><code>curl -fsSL https://goatheaven-inc.github.io/cari-ai-releases/install.sh | sh</code><button class="copy">복사</button></div>
           </div>
           <div class="term-card">
             <div class="term-os">🪟 Windows (PowerShell)</div>
-            <div class="code" data-copy>
-              <code>irm https://goatheaven-inc.github.io/cari-ai-releases/install.ps1 | iex</code>
-              <button class="copy" aria-label="복사">복사</button>
-            </div>
+            <div class="code" data-copy><code>irm https://goatheaven-inc.github.io/cari-ai-releases/install.ps1 | iex</code><button class="copy">복사</button></div>
           </div>
         </div>
         <div class="term-demo">
           <div class="term-bar"><i></i><i></i><i></i></div>
           <pre><span class="p">$</span> cari
-<span class="d">  카리AI  터미널 어시스턴트</span>
+<span class="d">  CARI AI  터미널 어시스턴트</span>
 <span class="u">나 ›</span> 제주도 2박3일 일정 짜줘
 <span class="b">카리 ›</span> 좋아요! 1일차는 성산일출봉과 섭지코지…
 <span class="u">나 ›</span> 거실 불 꺼줘
 <span class="b">카리 ›</span> 거실 조명을 끄는 실행 계획을 준비했어요.
 <span class="d">  🧠 기억 참조: 여행 일정</span></pre>
         </div>
-        <p class="term-note">
-          설치 후 <code>cari</code> 로 대화, <code>cari "질문"</code> 로 한 줄 질문,
-          <code>cari remember "..."</code> 로 기억. 자세히는
-          <a href="https://github.com/GOATHEAVEN-Inc/cari-ai-releases#readme">문서</a>.
-        </p>
+        <p class="term-note">설치 후 <code>cari</code> 로 대화, <code>cari "질문"</code> 로 한 줄 질문, <code>cari remember "..."</code> 로 기억. 자세히는 <a href="https://github.com/GOATHEAVEN-Inc/cari-ai-releases#readme">문서</a>.</p>
       </section>
 
       <section id="install">
@@ -250,9 +230,8 @@
           <div class="step"><h3>설치</h3><p>Mac은 드래그, Windows는 설치 관리자로 다음·다음.</p></div>
           <div class="step"><h3>실행</h3><p>앱을 열고 바로 대화를 시작합니다.</p></div>
         </div>
-
         <div class="cmp">
-          <div class="row"><div>설치 방식</div><div>카리AI</div><div>CLI형 도구</div></div>
+          <div class="row"><div>설치 방식</div><div>CARI AI</div><div>CLI형 도구</div></div>
           <div class="row"><div>터미널 필요</div><div class="no">아니오</div><div class="yes">예</div></div>
           <div class="row"><div>더블클릭 설치</div><div class="yes">예 (.dmg/.exe)</div><div class="no">—</div></div>
           <div class="row"><div>설치 없이 웹 사용</div><div class="yes">가능</div><div class="no">—</div></div>
@@ -264,26 +243,24 @@
         <p class="lead">설치 1분, 대화는 바로.</p>
         <div class="downloads">
           <a class="btn primary" id="primaryDownload2" href="#"><span class="os" id="primaryIcon2">🖥️</span><span id="primaryLabel2">다운로드</span></a>
+          <a class="btn ghost" id="webConsole2" href="#"><span class="os">💬</span><span>웹에서 바로 대화</span></a>
         </div>
         <p class="alt-os" id="altOs2"></p>
       </section>
     </div>
 
     <footer>
-      <div class="wrap">© <span id="year"></span> 카리AI · 범용 AI 어시스턴트 · <a href="#" style="color:var(--muted)">문의</a></div>
+      <div class="wrap">© <span id="year"></span> CARI AI · 범용 AI 어시스턴트</div>
     </footer>
 
     <script>
-      // ── 배포 설정: 실제 릴리스 위치로 교체하세요 ──────────────────────────
-      // GitHub Releases 예시: https://github.com/<owner>/<repo>/releases/latest/download/
       var RELEASES_BASE = "https://github.com/GOATHEAVEN-Inc/cari-ai-releases/releases/latest/download/";
-      var WEB_CONSOLE_URL = "https://goatheaven-inc.github.io/cari-ai-releases/console/"; // 배포된 웹 콘솔
-      var FILES = {
-        mac: "CariAI.dmg",
-        win: "CariAI.exe",
-        linux: "CariAI.AppImage"
-      };
-      // ──────────────────────────────────────────────────────────────────
+      var WEB_CONSOLE_URL = "https://goatheaven-inc.github.io/cari-ai-releases/console/";
+      var FILES = { mac: "CariAI.dmg", win: "CariAI.exe", linux: "CariAI.AppImage" };
+
+      // 브랜드 심볼(버터플라이)
+      document.getElementById("brandMark").innerHTML =
+        '<svg width="22" height="22" viewBox="24 12 72 64"><path fill="#3b82f6" d="M66.8203 40.4681C67.1087 34.907 68.076 31.3808 70.6592 27.8349C72.8949 24.7665 76.5184 21.7801 80.5705 21.2945C89.0013 20.2817 91.0865 29.9262 90.0404 36.3028C89.05 42.3368 86.7842 46.7478 85.8088 48.4354C85.5632 48.8599 85.6756 49.3998 86.0741 49.6904C88.275 51.295 94.5142 56.5504 90.8942 62.3329C87.0448 68.4834 78.3302 65.4901 74.197 61.2936C70.8701 57.9173 68.7606 53.6701 67.7273 49.1287C67.1145 46.4352 66.6674 43.413 66.8203 40.4681Z"/><path fill="#3b82f6" d="M42.8519 48.6984C42.9933 48.5265 42.8855 48.2739 42.6643 48.2485C35.3884 47.4249 28.8712 41.3736 28.0731 34.1157C27.3305 27.363 32.3232 19.3288 39.3802 18.188C47.0396 16.9503 55.2155 21.9992 59.2503 28.1866C63.3105 34.4133 64.3333 42.2941 63.066 49.6096C62.0768 55.3207 59.6986 60.8829 55.7148 65.1071C51.7299 69.3312 46.0538 72.1043 40.2351 71.997C38.6157 71.967 36.9418 71.6982 35.5934 70.8031C33.016 69.0901 32.3232 65.4647 33.148 62.4898C33.9728 59.5148 35.678 56.6668 37.6438 54.2802L42.8531 48.6972L42.8519 48.6984Z"/></svg>';
 
       var OS = { name: "기타", key: "mac", icon: "🖥️" };
       var ua = navigator.userAgent;
@@ -302,34 +279,22 @@
       }
       setPrimary("primaryDownload", "primaryIcon", "primaryLabel", "primaryHint");
       setPrimary("primaryDownload2", "primaryIcon2", "primaryLabel2");
+      ["webConsole", "webConsole2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.href = WEB_CONSOLE_URL; });
 
-      var web = document.getElementById("webConsole");
-      if (web) web.href = WEB_CONSOLE_URL;
-
-      // 다른 OS 링크
       var others = [
-        { key: "mac", label: "macOS(.dmg)" },
-        { key: "win", label: "Windows(.exe)" },
-        { key: "linux", label: "Linux(.AppImage)" }
+        { key: "mac", label: "macOS(.dmg)" }, { key: "win", label: "Windows(.exe)" }, { key: "linux", label: "Linux(.AppImage)" }
       ].filter(function (o) { return o.key !== OS.key; });
-      var altHtml = "다른 플랫폼: " + others.map(function (o) {
-        return '<a href="' + RELEASES_BASE + FILES[o.key] + '">' + o.label + "</a>";
-      }).join(" · ");
+      var altHtml = "다른 플랫폼: " + others.map(function (o) { return '<a href="' + RELEASES_BASE + FILES[o.key] + '">' + o.label + "</a>"; }).join(" · ");
       ["altOs", "altOs2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.innerHTML = altHtml; });
 
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // 코드 블록 복사 버튼
       document.querySelectorAll(".code[data-copy]").forEach(function (box) {
-        var btn = box.querySelector(".copy");
-        var code = box.querySelector("code");
+        var btn = box.querySelector(".copy"), code = box.querySelector("code");
         if (!btn || !code) return;
         btn.addEventListener("click", function () {
-          var text = code.textContent || "";
-          navigator.clipboard.writeText(text).then(function () {
-            var prev = btn.textContent;
-            btn.textContent = "복사됨 ✓";
-            btn.classList.add("done");
+          navigator.clipboard.writeText(code.textContent || "").then(function () {
+            var prev = btn.textContent; btn.textContent = "복사됨 ✓"; btn.classList.add("done");
             setTimeout(function () { btn.textContent = prev; btn.classList.remove("done"); }, 1500);
           });
         });
