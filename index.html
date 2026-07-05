@@ -144,6 +144,10 @@
         .grid, .steps, .cmp .row, .term-grid { grid-template-columns: 1fr; }
         nav.links a { display: none; }
         .lang-toggle { margin-left: 0; }
+        /* 모바일: 히어로 설치 명령이 넘쳐 복사 버튼이 화면 밖으로 밀리지 않게 줄바꿈 */
+        .code code { white-space: normal; word-break: break-all; }
+        .code { align-items: flex-start; }
+        .code .copy { position: sticky; top: 0; }
       }
     </style>
   </head>
