@@ -1,0 +1,15 @@
+{
+  "name": "CARI AI",
+  "short_name": "CARI",
+  "description": "자동으로 가장 효율적인 AI를 선택하는 카리 AI 어시스턴트",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f8ff",
+  "theme_color": "#f4f8ff",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
