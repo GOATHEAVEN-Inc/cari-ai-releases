@@ -11,12 +11,12 @@
     "sha256": "ad3163fad1add92361faba837405d8412ae7ee346ffe01b0b72e904c55ef68ff"
   },
   "public_work": {
-    "runtime_knowledge": 444,
+    "runtime_knowledge": 458,
     "procedures": 18,
-    "read_source_briefs": 207,
-    "authored_evidence_cards": 219,
-    "read_unique_source_urls": 197,
-    "strictly_reviewed_youtube_videos": 33,
+    "read_source_briefs": 210,
+    "authored_evidence_cards": 230,
+    "read_unique_source_urls": 200,
+    "strictly_reviewed_youtube_videos": 35,
     "youtube_target": 100000,
     "instagram_captions": 18,
     "threads_bodies": 12,
@@ -117,19 +117,19 @@
   },
   "collection_status": {
     "target_youtube_videos": 100000,
-    "qualified_youtube_videos": 33,
+    "qualified_youtube_videos": 35,
     "target_met": false,
-    "corpus_build_sha256": "4e3164dfdc55b551d1e41dfeb66650785f9460f8eebc0586905953a906074b8e",
+    "corpus_build_sha256": "0ff99c2e7af173165ed17b9c56b86b541c6c9412fd0c5a9657d92fb5827142d2",
     "dataset_rows_screened": 249790,
     "dataset_unique_video_ids": 234212,
     "caption_bodies_acquired": 268,
-    "current_machine_complete_videos": 34,
+    "current_machine_complete_videos": 36,
     "provider_api_complete_videos": 9,
-    "codex_agent_structured_complete_videos": 25,
+    "codex_agent_structured_complete_videos": 27,
     "mixed_method_complete_videos": 0,
     "unknown_method_complete_videos": 0,
     "stale_or_invalid_complete_videos_rejected": 0,
-    "full_text_agent_reviewed_videos": 33,
+    "full_text_agent_reviewed_videos": 35,
     "instagram_captions_read": 18,
     "threads_bodies_read": 12,
     "github_substantive_files_read": 40,
@@ -155,8 +155,8 @@
   "downloads": [
     {
       "filename": "ir-expert-capsule.zip",
-      "bytes": 224715,
-      "sha256": "c3f2e0d9e3a0fc77495afe349ca2004ca85e9e872bf753e8b174b18fd00751b8"
+      "bytes": 235519,
+      "sha256": "fe44734c57f1357b9b615007bdbb5185a01e2c6f7774e63bdd3e2bc86d053aa8"
     },
     {
       "filename": "ir-example.zip",
@@ -171,13 +171,13 @@
     "model_weight_training_performed": false,
     "codex_usage_separate": true,
     "new_reviewed_videos": 2,
-    "new_reviewed_characters": 60552,
+    "new_reviewed_characters": 165627,
     "new_social_bodies": 0,
-    "new_original_cards": 8,
+    "new_original_cards": 11,
     "additional_provider_api_calls": 0,
     "new_caption_candidates_acquired": 0,
     "new_official_pages": 1,
     "new_excluded_videos": 0
   },
-  "updated_at": "2026-09-12T18:21:37.683039+00:00"
+  "updated_at": "2026-09-12T19:25:09.414012+00:00"
 }
