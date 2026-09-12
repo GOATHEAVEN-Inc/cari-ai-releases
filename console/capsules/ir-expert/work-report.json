@@ -11,11 +11,11 @@
     "sha256": "ad3163fad1add92361faba837405d8412ae7ee346ffe01b0b72e904c55ef68ff"
   },
   "public_work": {
-    "runtime_knowledge": 385,
+    "runtime_knowledge": 390,
     "procedures": 18,
-    "read_source_briefs": 187,
-    "authored_evidence_cards": 180,
-    "read_unique_source_urls": 177,
+    "read_source_briefs": 189,
+    "authored_evidence_cards": 183,
+    "read_unique_source_urls": 179,
     "strictly_reviewed_youtube_videos": 24,
     "youtube_target": 100000,
     "instagram_captions": 16,
@@ -119,7 +119,7 @@
     "target_youtube_videos": 100000,
     "qualified_youtube_videos": 24,
     "target_met": false,
-    "corpus_build_sha256": "0e2b8f6fb7f14c8f6fb2b78a31914da41bb16124781bf837c4f96c9385b25307",
+    "corpus_build_sha256": "519cfad3d555cb17c43969d1a1fc450e1d4820c25f84e505cbab78905ae43949",
     "dataset_rows_screened": 249790,
     "dataset_unique_video_ids": 234212,
     "caption_bodies_acquired": 268,
@@ -156,8 +156,8 @@
   "downloads": [
     {
       "filename": "ir-expert-capsule.zip",
-      "bytes": 184063,
-      "sha256": "8e96697014ca76c4809911adc083df8780011663ee66370f26d235a503801229"
+      "bytes": 186961,
+      "sha256": "ad3527b1f6a26906b8ef06934d0261c97e5e566f54ba3e2eb82d27cb757636ac"
     },
     {
       "filename": "ir-example.zip",
@@ -183,5 +183,5 @@
       "초기 고객 검증"
     ]
   },
-  "updated_at": "2026-09-12T15:09:16.052342+00:00"
+  "updated_at": "2026-09-12T15:33:19.972372+00:00"
 }
