@@ -2,7 +2,7 @@
   "schema_version": 1,
   "brain_id": "brain_ir_expert",
   "name": "IR 전문가 캡슐",
-  "as_of": "2026-09-08",
+  "as_of": "2026-09-13",
   "image": {
     "url": "../../brains/ir-expert-capsule-v1.png",
     "width": 1254,
@@ -11,15 +11,15 @@
     "sha256": "ad3163fad1add92361faba837405d8412ae7ee346ffe01b0b72e904c55ef68ff"
   },
   "public_work": {
-    "runtime_knowledge": 390,
+    "runtime_knowledge": 411,
     "procedures": 18,
-    "read_source_briefs": 189,
-    "authored_evidence_cards": 183,
-    "read_unique_source_urls": 179,
-    "strictly_reviewed_youtube_videos": 24,
+    "read_source_briefs": 197,
+    "authored_evidence_cards": 196,
+    "read_unique_source_urls": 187,
+    "strictly_reviewed_youtube_videos": 27,
     "youtube_target": 100000,
-    "instagram_captions": 16,
-    "threads_bodies": 9,
+    "instagram_captions": 18,
+    "threads_bodies": 12,
     "github_repositories": 23,
     "github_substantive_files": 40
   },
@@ -28,8 +28,11 @@
     "pages": 601,
     "deck_families": 18,
     "bilingual_pairs": 5,
-    "direct_visual_review_pages": 46,
-    "raw_files_publicly_registered": false
+    "direct_visual_review_pages": 48,
+    "raw_files_publicly_registered": false,
+    "text_reviewed_pages": 599,
+    "textless_pages_visually_reviewed": 2,
+    "private_reusable_cards": 102
   },
   "formats": [
     "HWPX",
@@ -98,46 +101,43 @@
       "human_expert_comparison": true
     },
     "interpretation": "Local implementation and synthetic QA; not investment or grant acceptance, model weight training, or proof of undetectable AI authorship.",
-    "historical_checks_note": "automated_tests and live_document retain earlier run evidence. latest_batch_checks identifies this batch.",
+    "historical_checks_note": "automated_tests and live_document retain their dated historical evidence. latest_batch_checks contains only checks rerun for this publication.",
     "latest_batch_checks": {
+      "as_of": "2026-09-13",
       "agent_review_import": 12,
       "strict_status": 6,
-      "export_snapshot_and_ir_runtime_and_provider_usage": 28,
-      "checkpoint_safety": 7,
+      "export_snapshot_and_ir_runtime": 18,
+      "checkpoint_safety": 8,
+      "private_reference_search_queries": 3,
       "failed": 0,
       "server_typescript": "passed",
-      "codex_cli_response_cases": 3,
-      "semantic_required_checks_passed": 19,
-      "numeric_checks_passed": 30,
       "human_expert_review": false,
       "production_runtime_test": false,
-      "generation_model_identity": "default_unreported",
       "new_knowledge_improvement_proven": false
     }
   },
   "collection_status": {
     "target_youtube_videos": 100000,
-    "qualified_youtube_videos": 24,
+    "qualified_youtube_videos": 27,
     "target_met": false,
-    "corpus_build_sha256": "519cfad3d555cb17c43969d1a1fc450e1d4820c25f84e505cbab78905ae43949",
+    "corpus_build_sha256": "dcab33f1431813cdaf74e0b24cadffbe9ca1b5df459430649574a6d916b85b1c",
     "dataset_rows_screened": 249790,
     "dataset_unique_video_ids": 234212,
     "caption_bodies_acquired": 268,
-    "current_machine_complete_videos": 24,
+    "current_machine_complete_videos": 27,
     "provider_api_complete_videos": 9,
-    "codex_agent_structured_complete_videos": 15,
+    "codex_agent_structured_complete_videos": 18,
     "mixed_method_complete_videos": 0,
     "unknown_method_complete_videos": 0,
     "stale_or_invalid_complete_videos_rejected": 0,
-    "full_text_agent_reviewed_videos": 24,
-    "instagram_captions_read": 16,
-    "threads_bodies_read": 9,
+    "full_text_agent_reviewed_videos": 27,
+    "instagram_captions_read": 18,
+    "threads_bodies_read": 12,
     "github_substantive_files_read": 40,
     "raw_sources_included": false,
     "weight_training_performed": false,
     "human_expert_certification": false,
-    "interpretation": "Dataset screening, machine extraction, full-text agent review and independent capsule notes are different stages; counts must not be added. Current qualified total requires their intersection.",
-    "dataset_original_language_videos": 27500
+    "interpretation": "Dataset screening, machine extraction, full-text agent review and independent capsule notes are different stages; counts must not be added. Current qualified total requires their intersection."
   },
   "service_status": {
     "public_materials": "registered",
@@ -156,8 +156,8 @@
   "downloads": [
     {
       "filename": "ir-expert-capsule.zip",
-      "bytes": 186961,
-      "sha256": "ad3527b1f6a26906b8ef06934d0261c97e5e566f54ba3e2eb82d27cb757636ac"
+      "bytes": 200347,
+      "sha256": "19f879c195a02f1ceac828edb392bb9bbf61b0cf7a4d32deaeace1766358f9f8"
     },
     {
       "filename": "ir-example.zip",
@@ -168,20 +168,15 @@
   "analysis_resume": {
     "enabled": true,
     "cadence": "hourly",
-    "mode": "Codex agent review of existing public transcripts",
-    "new_reviewed_videos": 3,
-    "new_reviewed_characters": 58673,
-    "new_original_cards": 6,
-    "additional_provider_api_calls": 0,
+    "mode": "Codex agent source review",
     "model_weight_training_performed": false,
     "codex_usage_separate": true,
-    "new_caption_candidates_acquired": 0,
-    "new_candidates_are_reviewed": true,
-    "next_topics": [
-      "시장규모 산정",
-      "재무 시나리오",
-      "초기 고객 검증"
-    ]
+    "new_reviewed_videos": 3,
+    "new_reviewed_characters": 67844,
+    "new_social_bodies": 5,
+    "new_original_cards": 13,
+    "additional_provider_api_calls": 0,
+    "new_caption_candidates_acquired": 0
   },
-  "updated_at": "2026-09-12T15:33:19.972372+00:00"
+  "updated_at": "2026-09-12T15:53:58.543582+00:00"
 }
