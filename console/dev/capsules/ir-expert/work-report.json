@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "brain_id": "brain_ir_expert",
+  "name": "IR 전문가 캡슐",
+  "as_of": "2026-09-08",
+  "image": {
+    "url": "../../brains/ir-expert-capsule-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "transparent": true,
+    "sha256": "ad3163fad1add92361faba837405d8412ae7ee346ffe01b0b72e904c55ef68ff"
+  },
+  "public_work": {
+    "runtime_knowledge": 385,
+    "procedures": 18,
+    "read_source_briefs": 187,
+    "authored_evidence_cards": 180,
+    "read_unique_source_urls": 177,
+    "strictly_reviewed_youtube_videos": 24,
+    "youtube_target": 100000,
+    "instagram_captions": 16,
+    "threads_bodies": 9,
+    "github_repositories": 23,
+    "github_substantive_files": 40
+  },
+  "private_reference_processing": {
+    "provided_pdf_files": 23,
+    "pages": 601,
+    "deck_families": 18,
+    "bilingual_pairs": 5,
+    "direct_visual_review_pages": 46,
+    "raw_files_publicly_registered": false
+  },
+  "formats": [
+    "HWPX",
+    "PDF",
+    "PPTX",
+    "Figma importer ZIP"
+  ],
+  "completed_checks": [
+    "HWPX, PDF, PPTX: four synthetic example pages rendered and visually reviewed",
+    "PowerPoint: text edit, save, close and reopen verified"
+  ],
+  "pending_checks": [
+    "Native Hancom save and reopen",
+    "Figma importer execution and native save",
+    "Independent human IR expert comparison",
+    "Production IR runtime registration and file-generation budget configuration"
+  ],
+  "verification": {
+    "as_of": "2026-09-08",
+    "automated_tests": {
+      "server": {
+        "passed": 203,
+        "failed": 0
+      },
+      "ir": {
+        "passed": 12,
+        "failed": 0
+      },
+      "bedrock_usage": {
+        "passed": 10,
+        "failed": 0
+      },
+      "scale_pipeline": {
+        "passed": 54,
+        "failed": 0
+      },
+      "scale_integration": {
+        "passed": 22,
+        "failed": 0
+      },
+      "agent_review_import": {
+        "passed": 12,
+        "failed": 0
+      },
+      "collection_status": {
+        "passed": 6,
+        "failed": 0
+      },
+      "export_snapshot": {
+        "passed": 5,
+        "failed": 0
+      }
+    },
+    "live_document": {
+      "completed": true,
+      "pages": 4,
+      "synthetic_input_only": true,
+      "manual_expert_certification": false,
+      "native_pptx_korean_title_edit_save_reopen": true,
+      "embedded_chart_workbook_edit_exercised": false
+    },
+    "unverified": {
+      "native_figma": true,
+      "native_hancom": true,
+      "production_deployment": true,
+      "human_expert_comparison": true
+    },
+    "interpretation": "Local implementation and synthetic QA; not investment or grant acceptance, model weight training, or proof of undetectable AI authorship.",
+    "historical_checks_note": "automated_tests and live_document retain earlier run evidence. latest_batch_checks identifies this batch.",
+    "latest_batch_checks": {
+      "agent_review_import": 12,
+      "strict_status": 6,
+      "export_snapshot_and_ir_runtime_and_provider_usage": 28,
+      "checkpoint_safety": 7,
+      "failed": 0,
+      "server_typescript": "passed",
+      "codex_cli_response_cases": 3,
+      "semantic_required_checks_passed": 19,
+      "numeric_checks_passed": 30,
+      "human_expert_review": false,
+      "production_runtime_test": false,
+      "generation_model_identity": "default_unreported",
+      "new_knowledge_improvement_proven": false
+    }
+  },
+  "collection_status": {
+    "target_youtube_videos": 100000,
+    "qualified_youtube_videos": 24,
+    "target_met": false,
+    "corpus_build_sha256": "0e2b8f6fb7f14c8f6fb2b78a31914da41bb16124781bf837c4f96c9385b25307",
+    "dataset_rows_screened": 249790,
+    "dataset_unique_video_ids": 234212,
+    "caption_bodies_acquired": 268,
+    "current_machine_complete_videos": 24,
+    "provider_api_complete_videos": 9,
+    "codex_agent_structured_complete_videos": 15,
+    "mixed_method_complete_videos": 0,
+    "unknown_method_complete_videos": 0,
+    "stale_or_invalid_complete_videos_rejected": 0,
+    "full_text_agent_reviewed_videos": 24,
+    "instagram_captions_read": 16,
+    "threads_bodies_read": 9,
+    "github_substantive_files_read": 40,
+    "raw_sources_included": false,
+    "weight_training_performed": false,
+    "human_expert_certification": false,
+    "interpretation": "Dataset screening, machine extraction, full-text agent review and independent capsule notes are different stages; counts must not be added. Current qualified total requires their intersection.",
+    "dataset_original_language_videos": 27500
+  },
+  "service_status": {
+    "public_materials": "registered",
+    "runtime": "not yet confirmed on production",
+    "live_catalog_checked": "2026-09-08",
+    "live_catalog_ir_present": false,
+    "verified": false,
+    "weight_training_performed": false
+  },
+  "privacy": {
+    "user_decks_included": false,
+    "private_numbers_or_images_included": false,
+    "full_transcripts_included": false,
+    "shared_learning_disabled": true
+  },
+  "downloads": [
+    {
+      "filename": "ir-expert-capsule.zip",
+      "bytes": 184063,
+      "sha256": "8e96697014ca76c4809911adc083df8780011663ee66370f26d235a503801229"
+    },
+    {
+      "filename": "ir-example.zip",
+      "bytes": 66096,
+      "sha256": "0dc177bc8e8fd918a7c7a207ccab9f1b07b1c7d61d06f4e341c8c7240837af56"
+    }
+  ],
+  "analysis_resume": {
+    "enabled": true,
+    "cadence": "hourly",
+    "mode": "Codex agent review of existing public transcripts",
+    "new_reviewed_videos": 3,
+    "new_reviewed_characters": 58673,
+    "new_original_cards": 6,
+    "additional_provider_api_calls": 0,
+    "model_weight_training_performed": false,
+    "codex_usage_separate": true,
+    "new_caption_candidates_acquired": 0,
+    "new_candidates_are_reviewed": true,
+    "next_topics": [
+      "시장규모 산정",
+      "재무 시나리오",
+      "초기 고객 검증"
+    ]
+  },
+  "updated_at": "2026-09-12T15:09:16.052342+00:00"
+}
