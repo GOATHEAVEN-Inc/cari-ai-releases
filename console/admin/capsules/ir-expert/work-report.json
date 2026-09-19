@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "brain_id": "brain_ir_expert",
+  "name": "IR 전문가 캡슐",
+  "as_of": "2026-09-19",
+  "image": {
+    "url": "../../brains/ir-expert-capsule-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "transparent": true,
+    "sha256": "ad3163fad1add92361faba837405d8412ae7ee346ffe01b0b72e904c55ef68ff"
+  },
+  "public_work": {
+    "runtime_knowledge": 469,
+    "procedures": 18,
+    "read_source_briefs": 213,
+    "authored_evidence_cards": 238,
+    "read_unique_source_urls": 203,
+    "strictly_reviewed_youtube_videos": 37,
+    "youtube_target": 100000,
+    "instagram_captions": 19,
+    "threads_bodies": 12,
+    "github_repositories": 23,
+    "github_substantive_files": 40
+  },
+  "private_reference_processing": {
+    "provided_pdf_files": 23,
+    "pages": 601,
+    "deck_families": 18,
+    "bilingual_pairs": 5,
+    "direct_visual_review_pages": 48,
+    "raw_files_publicly_registered": false,
+    "text_reviewed_pages": 599,
+    "textless_pages_visually_reviewed": 2,
+    "private_reusable_cards": 102
+  },
+  "formats": [
+    "HWPX",
+    "PDF",
+    "PPTX",
+    "Figma importer ZIP"
+  ],
+  "completed_checks": [
+    "HWPX, PDF, PPTX: four synthetic example pages rendered and visually reviewed",
+    "PowerPoint: text edit, save, close and reopen verified"
+  ],
+  "pending_checks": [
+    "Native Hancom save and reopen",
+    "Figma importer execution and native save",
+    "Independent human IR expert comparison",
+    "Production IR runtime registration and file-generation budget configuration"
+  ],
+  "verification": {
+    "as_of": "2026-09-08",
+    "automated_tests": {
+      "server": {
+        "passed": 203,
+        "failed": 0
+      },
+      "ir": {
+        "passed": 12,
+        "failed": 0
+      },
+      "bedrock_usage": {
+        "passed": 10,
+        "failed": 0
+      },
+      "scale_pipeline": {
+        "passed": 54,
+        "failed": 0
+      },
+      "scale_integration": {
+        "passed": 22,
+        "failed": 0
+      },
+      "agent_review_import": {
+        "passed": 12,
+        "failed": 0
+      },
+      "collection_status": {
+        "passed": 6,
+        "failed": 0
+      },
+      "export_snapshot": {
+        "passed": 5,
+        "failed": 0
+      }
+    },
+    "live_document": {
+      "completed": true,
+      "pages": 4,
+      "synthetic_input_only": true,
+      "manual_expert_certification": false,
+      "native_pptx_korean_title_edit_save_reopen": true,
+      "embedded_chart_workbook_edit_exercised": false
+    },
+    "unverified": {
+      "native_figma": true,
+      "native_hancom": true,
+      "production_deployment": true,
+      "human_expert_comparison": true
+    },
+    "interpretation": "Local implementation and synthetic QA; not investment or grant acceptance, model weight training, or proof of undetectable AI authorship.",
+    "historical_checks_note": "automated_tests and live_document retain their dated historical evidence. latest_batch_checks contains only checks rerun for this publication.",
+    "latest_batch_checks": {
+      "as_of": "2026-09-19",
+      "agent_review_import": 12,
+      "strict_status": 6,
+      "export_snapshot_and_ir_runtime": 18,
+      "checkpoint_safety": 8,
+      "failed": 0,
+      "server_typescript": "passed",
+      "human_expert_review": false,
+      "production_runtime_test": false,
+      "new_knowledge_improvement_proven": false
+    }
+  },
+  "collection_status": {
+    "target_youtube_videos": 100000,
+    "qualified_youtube_videos": 37,
+    "target_met": false,
+    "corpus_build_sha256": "821f86eafae840b843e548d6d97be532f5a6aba10d1a61a84fe3b5e749e97417",
+    "dataset_rows_screened": 249790,
+    "dataset_unique_video_ids": 234212,
+    "caption_bodies_acquired": 268,
+    "current_machine_complete_videos": 38,
+    "provider_api_complete_videos": 9,
+    "codex_agent_structured_complete_videos": 29,
+    "mixed_method_complete_videos": 0,
+    "unknown_method_complete_videos": 0,
+    "stale_or_invalid_complete_videos_rejected": 0,
+    "full_text_agent_reviewed_videos": 37,
+    "instagram_captions_read": 19,
+    "threads_bodies_read": 12,
+    "github_substantive_files_read": 40,
+    "raw_sources_included": false,
+    "weight_training_performed": false,
+    "human_expert_certification": false,
+    "interpretation": "Dataset screening, machine extraction, full-text agent review and independent capsule notes are different stages; counts must not be added. Current qualified total requires their intersection."
+  },
+  "service_status": {
+    "public_materials": "registered",
+    "runtime": "not yet confirmed on production",
+    "live_catalog_checked": "2026-09-08",
+    "live_catalog_ir_present": false,
+    "verified": false,
+    "weight_training_performed": false
+  },
+  "privacy": {
+    "user_decks_included": false,
+    "private_numbers_or_images_included": false,
+    "full_transcripts_included": false,
+    "shared_learning_disabled": true
+  },
+  "downloads": [
+    {
+      "filename": "ir-expert-capsule.zip",
+      "bytes": 245422,
+      "sha256": "95325ad62ff852692a0f4af830aa72e154f9ff7bdbcf4e9951da5454e883bfec"
+    },
+    {
+      "filename": "ir-example.zip",
+      "bytes": 66096,
+      "sha256": "0dc177bc8e8fd918a7c7a207ccab9f1b07b1c7d61d06f4e341c8c7240837af56"
+    }
+  ],
+  "analysis_resume": {
+    "enabled": true,
+    "cadence": "hourly",
+    "mode": "Codex agent source review",
+    "model_weight_training_performed": false,
+    "codex_usage_separate": true,
+    "new_reviewed_videos": 2,
+    "new_reviewed_characters": 108216,
+    "new_social_bodies": 1,
+    "new_original_cards": 8,
+    "additional_provider_api_calls": 0,
+    "new_caption_candidates_acquired": 0,
+    "new_official_pages": 0,
+    "new_excluded_videos": 0
+  },
+  "updated_at": "2026-09-19T14:58:05.824030+00:00"
+}
