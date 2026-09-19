@@ -11,12 +11,12 @@
     "sha256": "ad3163fad1add92361faba837405d8412ae7ee346ffe01b0b72e904c55ef68ff"
   },
   "public_work": {
-    "runtime_knowledge": 521,
+    "runtime_knowledge": 525,
     "procedures": 18,
-    "read_source_briefs": 232,
-    "authored_evidence_cards": 271,
-    "read_unique_source_urls": 222,
-    "strictly_reviewed_youtube_videos": 46,
+    "read_source_briefs": 234,
+    "authored_evidence_cards": 273,
+    "read_unique_source_urls": 224,
+    "strictly_reviewed_youtube_videos": 47,
     "youtube_target": 100000,
     "instagram_captions": 22,
     "threads_bodies": 14,
@@ -117,19 +117,19 @@
   },
   "collection_status": {
     "target_youtube_videos": 100000,
-    "qualified_youtube_videos": 46,
+    "qualified_youtube_videos": 47,
     "target_met": false,
-    "corpus_build_sha256": "682fef33cb18e1730c3a8f24267b298f1b1b80ce3ee2d1273e05c078ecdb4f63",
+    "corpus_build_sha256": "da5116a250a4e8e2693a4715a43fbacee3252586033ae8d309062804b0f3b268",
     "dataset_rows_screened": 249790,
     "dataset_unique_video_ids": 234212,
     "caption_bodies_acquired": 268,
-    "current_machine_complete_videos": 48,
+    "current_machine_complete_videos": 50,
     "provider_api_complete_videos": 9,
-    "codex_agent_structured_complete_videos": 39,
+    "codex_agent_structured_complete_videos": 41,
     "mixed_method_complete_videos": 0,
     "unknown_method_complete_videos": 0,
     "stale_or_invalid_complete_videos_rejected": 0,
-    "full_text_agent_reviewed_videos": 46,
+    "full_text_agent_reviewed_videos": 47,
     "instagram_captions_read": 22,
     "threads_bodies_read": 14,
     "github_substantive_files_read": 40,
@@ -155,8 +155,8 @@
   "downloads": [
     {
       "filename": "ir-expert-capsule.zip",
-      "bytes": 275578,
-      "sha256": "93cf260e6803c58ceb608ddb5ee0e4edeb0b269ba9372f75b38bfd127dddef6b"
+      "bytes": 279099,
+      "sha256": "b1d69898a13f7c67430c3960ac0264648482abaac0345606edf9b69cd945581d"
     },
     {
       "filename": "ir-example.zip",
@@ -170,14 +170,14 @@
     "mode": "Codex agent source review",
     "model_weight_training_performed": false,
     "codex_usage_separate": true,
-    "new_reviewed_videos": 2,
-    "new_reviewed_characters": 28559,
-    "new_social_bodies": 1,
-    "new_original_cards": 5,
+    "new_reviewed_videos": 1,
+    "new_reviewed_characters": 30071,
+    "new_social_bodies": 0,
+    "new_original_cards": 2,
     "additional_provider_api_calls": 0,
     "new_caption_candidates_acquired": 0,
     "new_official_pages": 1,
-    "new_excluded_videos": 0
+    "new_excluded_videos": 1
   },
-  "updated_at": "2026-09-19T19:58:54.038696+00:00"
+  "updated_at": "2026-09-19T20:59:15.190193+00:00"
 }
