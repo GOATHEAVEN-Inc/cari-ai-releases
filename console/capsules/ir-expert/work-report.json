@@ -123,9 +123,9 @@
     "dataset_rows_screened": 249790,
     "dataset_unique_video_ids": 234212,
     "caption_bodies_acquired": 268,
-    "current_machine_complete_videos": 59,
+    "current_machine_complete_videos": 61,
     "provider_api_complete_videos": 9,
-    "codex_agent_structured_complete_videos": 50,
+    "codex_agent_structured_complete_videos": 52,
     "mixed_method_complete_videos": 0,
     "unknown_method_complete_videos": 0,
     "stale_or_invalid_complete_videos_rejected": 0,
@@ -156,7 +156,7 @@
     {
       "filename": "ir-expert-capsule.zip",
       "bytes": 297259,
-      "sha256": "cfbe52f47d6dca01da53e931937b78c8cefaddef8211e83c0da6abe23db9c957"
+      "sha256": "b5698b8f2b95897c4be90807d4da024ca62ccb8dc64b09bc976e1ebe681cb75c"
     },
     {
       "filename": "ir-example.zip",
@@ -170,14 +170,14 @@
     "mode": "Codex agent source review",
     "model_weight_training_performed": false,
     "codex_usage_separate": true,
-    "new_reviewed_videos": 1,
-    "new_reviewed_characters": 79622,
+    "new_reviewed_videos": 0,
+    "new_reviewed_characters": 0,
     "new_social_bodies": 0,
-    "new_original_cards": 1,
+    "new_original_cards": 0,
     "additional_provider_api_calls": 0,
     "new_caption_candidates_acquired": 0,
     "new_official_pages": 0,
-    "new_excluded_videos": 1
+    "new_excluded_videos": 2
   },
-  "updated_at": "2026-09-20T01:09:24.914776+00:00"
+  "updated_at": "2026-09-20T02:07:35.409168+00:00"
 }
