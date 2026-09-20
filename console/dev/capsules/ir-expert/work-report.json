@@ -11,10 +11,10 @@
     "sha256": "ad3163fad1add92361faba837405d8412ae7ee346ffe01b0b72e904c55ef68ff"
   },
   "public_work": {
-    "runtime_knowledge": 544,
+    "runtime_knowledge": 545,
     "procedures": 18,
     "read_source_briefs": 243,
-    "authored_evidence_cards": 283,
+    "authored_evidence_cards": 284,
     "read_unique_source_urls": 233,
     "strictly_reviewed_youtube_videos": 53,
     "youtube_target": 100000,
@@ -119,13 +119,13 @@
     "target_youtube_videos": 100000,
     "qualified_youtube_videos": 53,
     "target_met": false,
-    "corpus_build_sha256": "89485c1e86f5e23fd358b72250556dc417b4df7877a7393f65702b60148458cb",
+    "corpus_build_sha256": "ab78c5b8471946d8c5c94bd4b754a73c870dfe7b8af8df58209801ff5cab36a1",
     "dataset_rows_screened": 249790,
     "dataset_unique_video_ids": 234212,
     "caption_bodies_acquired": 268,
-    "current_machine_complete_videos": 61,
+    "current_machine_complete_videos": 64,
     "provider_api_complete_videos": 9,
-    "codex_agent_structured_complete_videos": 52,
+    "codex_agent_structured_complete_videos": 55,
     "mixed_method_complete_videos": 0,
     "unknown_method_complete_videos": 0,
     "stale_or_invalid_complete_videos_rejected": 0,
@@ -155,8 +155,8 @@
   "downloads": [
     {
       "filename": "ir-expert-capsule.zip",
-      "bytes": 297259,
-      "sha256": "b5698b8f2b95897c4be90807d4da024ca62ccb8dc64b09bc976e1ebe681cb75c"
+      "bytes": 297409,
+      "sha256": "168c7ed5c0c7e8534d0898b542b307d56dd7504f532aa3f723a2f91f2abdacf8"
     },
     {
       "filename": "ir-example.zip",
@@ -173,11 +173,11 @@
     "new_reviewed_videos": 0,
     "new_reviewed_characters": 0,
     "new_social_bodies": 0,
-    "new_original_cards": 0,
+    "new_original_cards": 1,
     "additional_provider_api_calls": 0,
     "new_caption_candidates_acquired": 0,
-    "new_official_pages": 0,
-    "new_excluded_videos": 2
+    "new_official_pages": 1,
+    "new_excluded_videos": 3
   },
-  "updated_at": "2026-09-20T02:07:35.409168+00:00"
+  "updated_at": "2026-09-20T03:08:33.542223+00:00"
 }
