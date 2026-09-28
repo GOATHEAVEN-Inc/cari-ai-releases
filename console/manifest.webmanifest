@@ -1,6 +1,6 @@
 {
-  "name": "CARI AI",
-  "short_name": "CARI",
+  "name": "카리AI",
+  "short_name": "카리AI",
   "description": "자동으로 가장 효율적인 AI를 선택하는 카리 AI 어시스턴트",
   "start_url": "./",
   "scope": "./",
