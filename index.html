@@ -293,7 +293,8 @@
     <script>
       var RELEASES_BASE = "https://github.com/GOATHEAVEN-Inc/cari-ai-releases/releases/latest/download/";
       var WEB_CONSOLE_URL = "https://goatheaven-inc.github.io/cari-ai-releases/console/";
-      var FILES = { mac: "CariAI.dmg", win: "CariAI.exe", linux: "CariAI.AppImage" };
+      var FILES = { mac: "CariAI.dmg", win: "CariAI.exe" };
+      function platformUrl(key) { return key === "linux" ? "#terminal" : RELEASES_BASE + FILES[key]; }
 
 
       var OS = { name: "기타", key: "mac", icon: "🖥️" };
@@ -303,13 +304,13 @@
       else if (/Mac/i.test(plat) || /Mac OS X/i.test(ua)) OS = { name: "macOS", key: "mac", icon: "🍎" };
       else if (/Linux/i.test(plat) && !/Android/i.test(ua)) OS = { name: "Linux", key: "linux", icon: "🐧" };
 
-      var dlUrl = RELEASES_BASE + FILES[OS.key];
+      var dlUrl = platformUrl(OS.key);
       document.getElementById("primaryIcon").textContent = OS.icon;
       var pi2 = document.getElementById("primaryIcon2"); if (pi2) pi2.textContent = OS.icon;
       ["primaryDownload", "primaryDownload2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.href = dlUrl; });
       ["webConsole", "webConsole2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.href = WEB_CONSOLE_URL; });
       var others = [
-        { key: "mac", label: "macOS(.dmg)" }, { key: "win", label: "Windows(.exe)" }, { key: "linux", label: "Linux(.AppImage)" }
+        { key: "mac", label: "macOS(.dmg)" }, { key: "win", label: "Windows(.exe)" }, { key: "linux", label: "Linux (Terminal)" }
       ].filter(function (o) { return o.key !== OS.key; });
 
       // ── 랜딩 다국어(i18n): 브라우저 언어 감지 + KO/EN 토글 ──
@@ -403,9 +404,9 @@
           if (el.hasAttribute("data-i18n-html")) el.innerHTML = v; else el.textContent = v;
         });
         var osName = OS.name === "기타" ? t("_other") : OS.name;
-        ["primaryLabel", "primaryLabel2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.textContent = t("_dl").replace("{os}", osName); });
-        var ph = document.getElementById("primaryHint"); if (ph) ph.textContent = t("_dlhint").replace("{os}", osName);
-        var altHtml = t("_alt") + others.map(function (o) { return '<a href="' + RELEASES_BASE + FILES[o.key] + '">' + o.label + "</a>"; }).join(" · ");
+        ["primaryLabel", "primaryLabel2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.textContent = OS.key === "linux" ? t("nav_terminal") : t("_dl").replace("{os}", osName); });
+        var ph = document.getElementById("primaryHint"); if (ph) ph.textContent = OS.key === "linux" ? t("term_h2") : t("_dlhint").replace("{os}", osName);
+        var altHtml = t("_alt") + others.map(function (o) { return '<a href="' + platformUrl(o.key) + '">' + o.label + "</a>"; }).join(" · ");
         ["altOs", "altOs2"].forEach(function (id) { var e = document.getElementById(id); if (e) e.innerHTML = altHtml; });
         document.querySelectorAll(".copy").forEach(function (b) { if (!b.classList.contains("done")) b.textContent = t("_copy"); });
       }
